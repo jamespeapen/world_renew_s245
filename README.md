@@ -1,7 +1,4 @@
-# world_renew_s245
-STAT-245 Data Analysis for World Renew
-
-# Data Analysis Project Summary
+# STAT-245 Data Analysis Project Summary
 ## Part 1 - Familiarize Yourselves with World Renew Project Data 
 
 As we discussed, your group is going to be doing some comparative analysis that stems from data that were collected from a Sustainable Livelihoods program that World Renew implemented through local partner organizations in 5 countries (Mozambique, Bangladesh, Tanzania, Mali and Honduras).  This program was funded by Global Affairs Canada (GAC) and implemented from October 2012 to January 2018.  World Renew has provided you with baseline and endline data from the overall program (see below attachment that's labeled as "Final Livelihoods Program Performance Results"), as well as the data analysis that was completed in December 2017 and January 2018 as part of the final evaluation (both the trend analysis and regression analysis that was done for the two countries - Mozambique and Bangladesh - that you will be focusing on are included in the "GAC Livelihoods Program Materials" folder below).  I recommend that all of you take a look through the World Renew project data and analysis right away so you can decide which part of the comparative analysis work you want to focus on (below).
