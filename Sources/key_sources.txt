@@ -1,3 +1,8 @@
+Key Questions:
+1. Were there broader changes taking place in the communities where World Renew's partners worked that influenced our observed results. We will answer this question using the results from World Renew and the 2011 and 2015 datasets from the Bangladesh Integrated Household Survey.
+
+2. How does the Mozambique Cell Phone Project compare with the Farmer and Savings group participants? World Renew is interested in exploring ways that increased use of technology might benefit their programs.
+
 1. https://www.mailman.columbia.edu/research/population-health-methods/difference-difference-estimation:
 
 This source will provide us with an understanding of the difference in difference method of quasi-experimental
