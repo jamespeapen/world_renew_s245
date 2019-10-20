@@ -4,6 +4,8 @@ Key Questions:
 2. How does the Mozambique Cell Phone Project compare with the Farmer and Savings group participants? Is there a similar or greater amount of change in household well-being for the Cell phone project between its start and end than for the savings group participants?
 World Renew is interested in exploring ways that increased use of technology might benefit their programs.
 
+
+
 1. https://www.mailman.columbia.edu/research/population-health-methods/difference-difference-estimation:
 
 This source will provide us with an understanding of the difference in difference method of quasi-experimental study.
@@ -12,7 +14,8 @@ This source will provide us with an understanding of the difference in differenc
 
 This article examines the economic impacts of climate change on crop farming in Bangladesh. We can learn about the impacts and see how the World Renew study fits with their data and conclusions and how, based on the effects from this paper, the communities are helped by World Renew.
 
-3.
+3. Aurélie Brunie, Laura Fumagalli, Thomas Martin, Samuel Field, Diana Rutherford, "Can village savings and loan groups be a potential tool in the malnutrition fight? Mixed method findings from Mozambique", Children and Youth Services Review, Volume 47, Part 2, 2014, Pages 113-120:
+
 This article examines the impact of participation in viallage savings and loan (VSL) groups, alone and in combination with a rotating labr scheme called Ajuda Muta (AM), on household and child nutritional outcomes in Nampula Province in Mozambique. We can learn about the reported impacts of VSL implication in the unbanked community on the food security which World Renew's Mozambique project focuses, measuring impacts of microfinance aid in a form of VSL on food security with both monetary and non-monetary income measures.
 
 
