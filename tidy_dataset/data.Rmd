@@ -43,8 +43,10 @@ bihs_child <- readxl::read_excel('BIHS_child_health_2011_15.xlsx')
 <!-- Food Security -->
 ## Food Security  
 ```{r}
-gf_histogram(~hhs_total, data = bihs_household)
-gf_violin(hhs_1_nofood ~ land_total, data = bihs_household)
+gf_jitter(hhs_total ~ survey_year, data = bihs_household, ylab = "Household Hunger Scale", xlab = "Survey Year")
+gf_jitter(fcs ~ survey_year, data = bihs_household, xlab = "Survey Year", ylab = "Food Consumption Score")
+gf_jitter(underweight_high ~ survey_year, data = bihs_child, xlab = "Survey Year", ylab = "High Underweight Status")
+gf_bar(~underweight_high|survey_year, data = bihs_child, xlab = "Child Severely Underweight", ylab = "Count")
 ```
 
 
