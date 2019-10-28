@@ -41,6 +41,11 @@ bihs_child <- readxl::read_excel('BIHS_child_health_2011_15.xlsx')
 <!-- Savings -->
 
 <!-- Food Security -->
+## Food Security  
+```{r}
+gf_histogram(~hhs_total, data = bihs_household)
+gf_violin(hhs_1_nofood ~ land_total, data = bihs_household)
+```
 
 
 
