@@ -31,12 +31,17 @@ knitr::opts_chunk$set(
   message = FALSE, warning = FALSE) # don't print warnings or messages in compiled document. So you MUST check them in RStudio!
 ```
 
+```{r}
+bihs_household <- readxl::read_excel('BIHS_household_2011_15.xlsx')
+bihs_child <- readxl::read_excel('BIHS_child_health_2011_15.xlsx')
+```
 
 <!-- Farmers training-->
 
 <!-- Savings -->
 
 <!-- Food Security -->
+
 
 
 
