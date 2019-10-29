@@ -39,6 +39,26 @@ bihs_child <- readxl::read_excel('BIHS_child_health_2011_15.xlsx')
 <!-- Farmers training-->
 
 <!-- Savings -->
+# Savings
+```{r}
+# reading in the data
+household <- readxl::read_excel('BIHS_household_2011_15.xlsx')
+child <- readxl::read_excel('BIHS_child_health_2011_15.xlsx')
+```
+```{r}
+# tables
+pander::pander(table(household$hhhead_gender, household$house_owned))
+pander::pander(table(household$hhhead_gender, household$asset_television))
+pander::pander(table(household$hhhead_gender, household$asset_telephone))
+pander::pander(table(household$hhhead_gender, household$asset_tractor))
+```
+
+```{r}
+# exploratory plots
+gf_bar(~hhhead_gender, data = subset(household, !is.na(asset_telephone)), xlab = "Gender", ylab = "Count", fill = ~ asset_telephone, factor(survey_year))
+```
+
+## Summary Statistics
 
 <!-- Food Security -->
 ## Food Security  
@@ -67,7 +87,6 @@ underweight <- bihs_child %>% select(underweight_high, survey_year)
 require(ggplot2)
 gf_bar(..prop..~survey_year, data = underweight, xlab = "Child Severely Underweight", ylab = "Count")
 ggplot(underweight) + geom_bar(aes(x = survey_year, y = ..prop.., group = 1), stat = 'count')
-```
 
 
 
