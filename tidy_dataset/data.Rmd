@@ -54,7 +54,7 @@ pander::pander( summary(fs$fcs, fs$hhs_total) )
 
 Summary of Total Household Hunger Scale
 ```{r}
-pander::pander( summary(fs$hhs_total))
+pander::pander( summary(fs$hhs_total) )
 ```
 
 ## Data Exploration Plots  
@@ -62,7 +62,11 @@ pander::pander( summary(fs$hhs_total))
 gf_jitter(hhs_total ~ survey_year, data = bihs_household, ylab = "Household Hunger Scale", xlab = "Survey Year")
 gf_jitter(fcs ~ survey_year, data = bihs_household, xlab = "Survey Year", ylab = "Food Consumption Score")
 gf_jitter(underweight_high ~ survey_year, data = bihs_child, xlab = "Survey Year", ylab = "High Underweight Status")
-gf_bar(~underweight_high|survey_year, data = bihs_child, xlab = "Child Severely Underweight", ylab = "Count")
+underweight <- bihs_child %>% select(underweight_high, survey_year)
+
+require(ggplot2)
+gf_bar(..prop..~survey_year, data = underweight, xlab = "Child Severely Underweight", ylab = "Count")
+ggplot(underweight) + geom_bar(aes(x = survey_year, y = ..prop.., group = 1), stat = 'count')
 ```
 
 
