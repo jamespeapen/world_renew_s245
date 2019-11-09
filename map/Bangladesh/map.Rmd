@@ -1,0 +1,32 @@
+---
+title: "BIHS Map"
+author: ""
+date: ""
+output: 
+  html_document:
+    fig_height: 3
+    fig_width: 5
+  pdf_document:
+    fig_height: 3
+    fig_width: 5
+  word_document:
+    fig_height: 3
+    fig_width: 5
+---
+
+```{r, setup, include=FALSE}
+require(mosaic)   # Load additional packages here 
+library(ggplot2)
+library(devtools)
+library(dplyr)
+library(stringr)
+knitr::opts_chunk$set(
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+```
+
+```{r}
+map_data <- read_rds('map/Bangaldesh/gadm36_BGD_4_sp.rds')
+head(map_data)
+```
+
