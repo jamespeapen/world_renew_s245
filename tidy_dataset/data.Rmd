@@ -33,62 +33,58 @@ knitr::opts_chunk$set(
 
 ```{r}
 bihs_household <- readxl::read_excel('BIHS_household_2011_15.xlsx')
-bihs_child <- readxl::read_excel('BIHS_child_health_2011_15.xlsx')
-```
-
-<!-- Farmers training-->
-
-<!-- Savings -->
-# Savings
-```{r}
-# reading in the data
-household <- readxl::read_excel('BIHS_household_2011_15.xlsx')
-child <- readxl::read_excel('BIHS_child_health_2011_15.xlsx')
-```
-```{r}
-# tables
-pander::pander(table(household$hhhead_gender, household$house_owned))
-pander::pander(table(household$hhhead_gender, household$asset_television))
-pander::pander(table(household$hhhead_gender, household$asset_telephone))
-pander::pander(table(household$hhhead_gender, household$asset_tractor))
 ```
 
 ```{r}
-# exploratory plots
-gf_bar(~hhhead_gender, data = subset(household, !is.na(asset_telephone)), xlab = "Gender", ylab = "Count", fill = ~ asset_telephone, factor(survey_year))
+bihs_household <- bihs_household %>% mutate(survey_year = factor(survey_year))
 ```
 
-## Summary Statistics
 
-<!-- Food Security -->
-## Food Security  
-### Summary Statistics  
 ```{r}
-fs <- bihs_household %>% select(fcs, dd_1_wheat, dd_2_wheat, dd_3_tubers, dd_4_cereals, dd_5_vegetables, dd_6_fruits, dd_7_beans, dd_8_eggs, dd_9_dairy, dd_10_meat, dd_11_poultry, dd_12_fish, dd_13_oils, dd_14_sugar, dd_15_condiments, dd_16_nuts, dd_16_nuts, dd_17_alcohol, hhs_total, hhs_1_nofood, hhs_2_sleephungry, hhs_3_hungry)
+bihs_household <- bihs_household %>% rename(year = survey_year, 
+                                            id = a01,
+                                            mean_annual_temp = bio_bio_1 ,
+                                            annual_precip = bio_bio_12,
+                                            gender_parity_gap = weai_parity_gap)
 ```
 
-Summary of Food Consumption Score
 ```{r}
-pander::pander( summary(fs$fcs, fs$hhs_total) )
+final_bihs <- bihs_household %>% select(id,
+                                        year,
+                                        hhhead_gender,
+                                        hhhead_education,
+                                        hhhead_literate,
+                                        memb_total,
+                                        memb_und15,
+                                        memb_15_44,
+                                        gender_parity_gap,
+                                        asset_cartplough, 
+                                        asset_motorbike,
+                                        asset_qty_poultry,
+                                        asset_qty_cattle,
+                                        asset_qty_otherlivestock,
+                                        asset_qty_sheepgoat,
+                                        asset_television,
+                                        asset_radio,
+                                        asset_telephone,
+                                        asset_tractor,
+                                        asset_television,
+                                        fcs,
+                                        hhs_total,
+                                        mean_annual_temp,
+                                        annual_precip)
+                                                                   
+```
+```{r}
+glimpse(final_bihs)
+pander::pander(head(final_bihs))
 ```
 
-Summary of Total Household Hunger Scale
 ```{r}
-pander::pander( summary(fs$hhs_total) )
+gf_point(fcs ~ gender_parity_gap, data = final_bihs)
+gf_boxplot(fcs ~ factor(hhs_total), data = final_bihs)
+gf_bar(~hhhead_gender, data = subset(final_bihs, !is.na(asset_telephone)), xlab = "Gender", ylab = "Count", fill = ~ asset_telephone, factor(year))
+
 ```
 
-## Data Exploration Plots  
-```{r}
-gf_jitter(hhs_total ~ survey_year, data = bihs_household, ylab = "Household Hunger Scale", xlab = "Survey Year")
-gf_jitter(fcs ~ survey_year, data = bihs_household, xlab = "Survey Year", ylab = "Food Consumption Score")
-gf_jitter(underweight_high ~ survey_year, data = bihs_child, xlab = "Survey Year", ylab = "High Underweight Status")
-underweight <- bihs_child %>% select(underweight_high, survey_year)
 
-require(ggplot2)
-gf_bar(..prop..~survey_year, data = underweight, xlab = "Child Severely Underweight", ylab = "Count")
-ggplot(underweight) + geom_bar(aes(x = survey_year, y = ..prop.., group = 1), stat = 'count')
-
-
-
-
-  
