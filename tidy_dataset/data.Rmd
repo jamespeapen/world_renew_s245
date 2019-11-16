@@ -75,7 +75,7 @@ final_bihs <- bihs_household %>% select(id,
                                         hhs_total,
                                         mean_annual_temp,
                                         annual_precip)
-                                                                   
+write.csv(final_bihs, "bihs_final.csv")
 ```
 
 ```{r}
