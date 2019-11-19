@@ -1,7 +1,7 @@
 ---
 title: "Food Security Analysis for World Renew Global Affairs Canada"
 author: "James Eapen, Myungha Kim, Ivanna Rodriguez"
-date: "11/18/2019"
+date: "11/19/2019"
 output: ioslides_presentation
 ---
 
@@ -10,9 +10,22 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ## Introduction 
+![](WR_logos-1.png)
+
+World Renew wanted an analysis of the effectiveness of their programs in Bangladesh that were aimed at improving food security. 
 
 ## GAC Livelihoods
 
 ## BIHS
+The Bangladesh Integrated Household Survey is a survey of households across the country that includes variables about: 
 
+ - Food security
+ - Women's empowerment
+ - Household assets
+ - Literacy and education
+ - Climate conditions
+ 
+We had data from 2011 to 2015 which was the same time period that World Renew had their programs.
+
+They wanted us to see whether an external dataset reflected any changes that could be attributed to the program.
 
