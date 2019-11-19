@@ -6,7 +6,11 @@ output: ioslides_presentation
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
+library(ggformula)
+bihs <- readxl::read_excel("../tidy_dataset/BIHS_household_2011_15.xlsx")
+bihs$survey_year = as.factor(bihs$survey_year)
+
 ```
 
 ## Introduction 
@@ -15,6 +19,13 @@ knitr::opts_chunk$set(echo = FALSE)
 World Renew wanted an analysis of the effectiveness of their programs in Bangladesh that were aimed at improving food security. 
 
 ## GAC Livelihoods
+
+## Questions
+How is food security affected by assets and demographics?  
+\n
+Assets include farming equipment, livestock and electronics.  
+\n
+Demographics include literacy and education measures. 
 
 ## BIHS
 The Bangladesh Integrated Household Survey is a survey of households across the country that includes variables about: 
@@ -28,4 +39,60 @@ The Bangladesh Integrated Household Survey is a survey of households across the 
 We had data from 2011 to 2015 which was the same time period that World Renew had their programs.
 
 They wanted us to see whether an external dataset reflected any changes that could be attributed to the program.
+
+
+## Model
+
+```{r}
+bihs_lm <- lm(data = bihs, fcs ~ factor(survey_year) + 
+                asset_qty_poultry + asset_qty_cattle + 
+                asset_qty_otherlivestock + asset_qty_sheepgoat + 
+                memb_total + memb_und15 + memb_15_44 + 
+                hhs_total + bio_bio_1 + bio_bio_12 + 
+                house_owned + asset_cartplough + 
+                asset_telephone)
+
+```
+$R^2$ = `r bihs_lm$r_adj`
+
+## Survey Year
+```{r, warning=FALSE}
+gf_boxplot(data = bihs, fcs ~ survey_year, 
+           na.rm = TRUE, 
+           xlab = "Survey Year", ylab = "Food Consumption Score")
+```
+
+## House Ownership
+```{r, warning=FALSE}
+gf_boxplot(data = bihs, fcs ~ house_owned, 
+           na.rm = TRUE, 
+           xlab = "House Owned", ylab = "Food Consumption Score")
+
+```
+
+## Asset: Cartplough
+```{r, warning=FALSE}
+gf_boxplot(data = bihs, fcs ~ asset_cartplough, 
+           na.rm = TRUE, 
+           xlab = "Has Cartplough", ylab = "Food Consumption Score")
+
+```
+
+## Asset: Telephone
+```{r, warning=FALSE}
+gf_boxplot(data = bihs, fcs ~ asset_telephone, 
+           na.rm = TRUE, 
+           xlab = "Has Telephone", ylab = "Food Consumption Score")
+
+```
+
+```
+
+
+## Challenges 
+ 
+ - Some predictors did not have enough variation to be fit 
+ - 
+
+
 
