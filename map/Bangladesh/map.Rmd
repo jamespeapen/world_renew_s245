@@ -3,10 +3,10 @@ title: "BIHS Map"
 author: ""
 date: ""
 output: 
-  html_document:
+  pdf_document:
     fig_height: 3
     fig_width: 5
-  pdf_document:
+  html_document:
     fig_height: 3
     fig_width: 5
   word_document:
@@ -25,8 +25,69 @@ knitr::opts_chunk$set(
   size="small")   # slightly smaller font for code
 ```
 
+
 ```{r}
-map_data <- read_rds('map/Bangaldesh/gadm36_BGD_4_sp.rds')
-head(map_data)
+require(leaflet)
+require(sp)
+require(RColorBrewer)
 ```
+
+
+```{r}
+fname <- 'gadm36_BGD_4_sp.rds'
+bangla_map <- readRDS(fname)
+class(bangla_map)
+```
+
+```{r}
+names(bangla_map)
+```
+
+```{r}
+my.map <- leaflet(bangla_map) %>%
+  setView(lat = 23.6850, lng = 90.3563, zoom = 6) %>%
+  addTiles()
+```
+
+```{r}
+my.map <- my.map %>% addPolygons()
+```
+
+```{r}
+colrs <- colorNumeric(palette='Spectral', domain=c(-1,1))
+```
+
+
+```{r}
+# coloring map based on dataset
+bihs_original <- read_excel('BIHS_household_2011_15.xlsx')
+```
+
+```{r}
+bangla_map$FAKE_DATA <- runif(length(bangla_map), min=-1, max=1)
+```
+```{r}
+my.map <- leaflet(bangla_map) %>%
+  setView(lat = 23.6850, lng = 90.3563, zoom = 6) %>%
+  addTiles()
+```
+```{r}
+my.map
+```
+
+
+
+
+```{r}
+my.map <- my.map %>% 
+  addPolygons(
+  fillColor = ~colrs(FAKE_DATA),
+  weight = 2, #line thickness in pixels
+  opacity = 1, #line opacity, 1 is totally opaque
+  color = "white", #line color
+  dashArray = "3", #type of lines. see help file for addPolygons and link there for more info...this is dotted lines
+  fillOpacity = 0.7)
+my.map
+```
+
 
