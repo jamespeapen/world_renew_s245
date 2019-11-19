@@ -1,0 +1,18 @@
+---
+title: "Food Security Analysis for World Renew Global Affairs Canada"
+author: "James Eapen, Myungha Kim, Ivanna Rodriguez"
+date: "11/18/2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Introduction 
+
+## GAC Livelihoods
+
+## BIHS
+
+
