@@ -1,18 +1,87 @@
 ---
 title: "Food Security Analysis for World Renew Global Affairs Canada"
 author: "James Eapen, Myungha Kim, Ivanna Rodriguez"
-date: "11/18/2019"
+date: "11/19/2019"
 output: ioslides_presentation
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(ggformula)
 ```
 
-## Introduction 
+## Introduction
+\n
+![](WR_logos-1.png)
+\n
+World Renew wanted an analysis of the effectiveness of their programs in Bangladesh that were aimed at improving food security.
 
-## GAC Livelihoods
+## Sustainable Livelihoods Program
+    - A program implemented by World Renew in five countries to enhance livelihood security for vulnerable households from 2012 to 2017.
+    - Three main focus of the programThree main focuses of the program: Food Security, Sustainable Economic Growth, Community Governance Capacity
+    
+
+## Questions
+How is food security affected by assets and demographicsby assets and demographics?  
+\n
+Assets include : farming equipment, livestock and electronics.  
+\n
+Demographics include : gender, year, number of household members, literacy, and measures and climate conditions measures.
 
 ## BIHS
+The Bangladesh Integrated Household Survey is a survey of households across the country that includes variables about:
+
+ - Food security
+ - Women's empowerment
+ - Household assets
+ - Literacy and education
+ - Climate conditions
+ 
+We had data from 2011 to 2015 which was the same time period that World Renew had their programs.
+\n
+They wanted us to see whether an external dataset reflected any changes that could be attributed to the program.
 
 
+
+
+## Exploratory Plots
+
+```{r, warning = FALSE}
+gf_boxplot(data = bihs, fcs ~ house_owned)
+
+gf_boxplot(data = bihs, fcs ~ asset_cartplough)
+gf_boxplot(data = bihs, fcs ~ asset_tractor)
+gf_boxplot(data = bihs, fcs ~ asset_motorbike)
+gf_boxplot(data = bihs, fcs ~ asset_telephone)
+gf_boxplot(data = bihs, fcs ~ asset_radio)
+```
+
+## Models
+
+```{r}
+bihs_lm <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry + asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + memb_total + memb_und15 + memb_15_44 + hhs_total + bio_bio_1 + bio_bio_12 + house_owned + asset_cartplough + asset_telephone)
+
+summary(bihs_lm)
+vif(bihs_lm)
+```
+
+
+## Figures
+
+
+## Challenges
+\n
+Some of the categorical variables values do not have much variation which does not allow us to model the regression successfully (e.g. assets_poultry, there were a lot of people who don’t have poultry which is recorded as 0, not much variation within the values)Some of the categorical variables values do not have much variation
+There might be some combination of values of categorical predictors that don’t exist 
+Categorical variable such as hhs_education has too many categories
+Variables might have incomplete possible values
+There are some combination of values of categorical predictors that don’t exist 
+
+## Actions in Plan of Action
+\n
+Fit all the quantitative variables first, then add categorical variables one by one 
+Figure out which variable cause the problem 
+Change to numeric variables
+Delete variables
+Collapse variables together
+Cut down on the number of categories for variables
