@@ -20,10 +20,12 @@ str(bihs)
 tally(bihs$hhhead_literate)
 ```
 ```{r}
-mod <- lm(fcs ~ year + hhhead_gender + hhhead_literate + 
-                     memb_total + memb_und15 + memb_15_44 + 
-                     gender_parity_gap + 
-                     asset_cartplough + asset_motorbike + asset_television + asset_radio + asset_telephone + asset_tractor +
-                     asset_qty_poultry + asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat, data = bihs)
+mod <- lm(fcs ~ year, data = bihs)
 ```
+
+
+```{r}
+```
+
+
 
