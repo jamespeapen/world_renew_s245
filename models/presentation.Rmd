@@ -86,13 +86,7 @@ gf_boxplot(data = bihs, fcs ~ asset_telephone,
 
 ```
 
-```
 
-
-## Challenges 
- 
- - Some predictors did not have enough variation to be fit 
- - 
 
 
 
