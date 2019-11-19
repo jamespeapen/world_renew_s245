@@ -3,10 +3,10 @@ title: "Assets model"
 author: "Ivanna Rodriguez"
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
 output: 
-  html_document:
+  pdf_document:
     fig_height: 2.2
     fig_width: 4
-  pdf_document:
+  html_document:
     fig_height: 2.2
     fig_width: 4
   word_document:
@@ -62,6 +62,10 @@ bihs <- bihs %>% mutate(house_owned = bihs_original$house_owned) %>%
           asset_television,
           asset_motorbike,
           asset_cartplough,
+          asset_qty_poultry,
+          asset_qty_cattle,
+          asset_qty_otherlivestock,
+          asset_qty_sheepgoat
         ) %>%
   na.omit()
 ```
@@ -81,6 +85,8 @@ gf_boxplot(data = bihs, fcs ~ asset_radio)
 ```
 
 ## Fitting the model
+
+try changing categorical to 1 and 0
 
 ```{r}
 head(bihs)
@@ -126,4 +132,20 @@ asset_lm_bic <- lm(data = bihs, fcs ~ asset_telephone, na.action = 'na.fail')
 summary(asset_lm_bic)
 ```
 
-  
+```{r}
+asset_lm_all <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry + asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + memb_total + memb_und15 + memb_15_44 + hhs_total + bio_bio_1 + bio_bio_12)
+summary(asset_lm_all)
+```
+
+```{r}
+vif(asset_lm_all)
+```
+
+
+```{r}
+asset_lm_all_two <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry + asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + memb_total + memb_und15 + memb_15_44 + hhs_total + bio_bio_1 + bio_bio_12 + house_owned + asset_cartplough + asset_telephone)
+
+summary(asset_lm_all_two)
+vif(asset_lm_all_two)
+```
+
