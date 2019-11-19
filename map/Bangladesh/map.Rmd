@@ -21,7 +21,7 @@ library(devtools)
 library(dplyr)
 library(stringr)
 knitr::opts_chunk$set(
-  tidy=FALSE,     # display code as typed
+  tidy=FALSE, cache = TRUE,    # display code as typed
   size="small")   # slightly smaller font for code
 ```
 
@@ -60,28 +60,34 @@ colrs <- colorNumeric(palette='Spectral', domain=c(-1,1))
 
 ```{r}
 # coloring map based on dataset
-bihs_original <- read_excel('BIHS_household_2011_15.xlsx')
+bihs_original <- readxl::read_excel('BIHS_household_2011_15.xlsx')
+bihs_map <- bihs_original %>% group_by(NAME_2) %>%
+  summarise(ave_age = mean(~hhhead_age, na.rm = TRUE), 
+            literacy = prop(~hhhead_literate == "can read")) %>%
+  ungroup()
+
+glimpse(bihs_map)
+
+
 ```
 
 ```{r}
-bangla_map$FAKE_DATA <- runif(length(bangla_map), min=-1, max=1)
+final_map <- merge(bangla_map@data, bihs_map, all.x = TRUE)
+
+bangla_map$literacy <- final_map$literacy
 ```
 ```{r}
 my.map <- leaflet(bangla_map) %>%
   setView(lat = 23.6850, lng = 90.3563, zoom = 6) %>%
   addTiles()
 ```
-```{r}
-my.map
-```
-
-
 
 
 ```{r}
+color <-colorQuantile("YlOrRd", NULL, n = 5)
 my.map <- my.map %>% 
   addPolygons(
-  fillColor = ~colrs(FAKE_DATA),
+  fillColor = (~literacy),
   weight = 2, #line thickness in pixels
   opacity = 1, #line opacity, 1 is totally opaque
   color = "white", #line color
