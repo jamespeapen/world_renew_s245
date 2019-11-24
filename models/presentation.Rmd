@@ -111,6 +111,7 @@ Predictors:
  - Household members, members under 15, members between 15 and 44
  - Houshold hunger score
  - Annual rainfall and temperature
+ 
 $R^2$ = 0.26
 
 ## Challenges
