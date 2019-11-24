@@ -1,11 +1,14 @@
 ---
-title: "Assets model"
-author: "Ivanna Rodriguez"
+title: "BIHS Model Fitting"
+subtitle: "STAT-245, Calvin University"
+author: "Ivanna Rodriguez, Myungha Kim, James Eapen"
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
 output: 
   pdf_document:
     fig_height: 2.2
     fig_width: 4
+    toc: true
+    toc_depth: 2
   html_document:
     fig_height: 2.2
     fig_width: 4
@@ -41,32 +44,34 @@ knitr::opts_chunk$set(
   message = FALSE, warning = FALSE) # don't print warnings or messages in compiled document. So you MUST check them in RStudio!
 ```
 
-## Data Prep
 
-```{r}
+```{r, include = FALSE}
 # reading in the data
-bihs <- read.csv('bihs_final.csv')
+bihs <- read_csv('bihs_final.csv')
 bihs_original <- read_excel('../tidy_dataset/BIHS_household_2011_15.xlsx')
+bihs <- bihs%>%mutate(house_owned = bihs_original$house_owned)
 bihs_original$survey_year <- as.factor(bihs_original$survey_year)
 ```
 
-```{r}
-# adding house_owned variable to bihs dataset
-bihs <- bihs %>% mutate(house_owned = bihs_original$house_owned) %>% 
+```{r, include = FALSE}
+# selecting the variables we're going to use for our model
+bihs_original <- bihs_original%>% 
   select(
           fcs,
-          year,
-          house_owned,      
-          asset_radio,
-          asset_telephone,
-          asset_tractor,
-          asset_television,
-          asset_motorbike,
-          asset_cartplough,
+          survey_year,
           asset_qty_poultry,
           asset_qty_cattle,
           asset_qty_otherlivestock,
-          asset_qty_sheepgoat
+          asset_qty_sheepgoat,
+          memb_total,
+          memb_und15,
+          memb_15_44,
+          hhs_total,
+          bio_bio_1,
+          bio_bio_12,
+          house_owned,
+          asset_cartplough, 
+          asset_telephone,
         ) %>%
   na.omit()
 ```
@@ -87,116 +92,14 @@ gf_boxplot(data = bihs, fcs ~ asset_radio)
 
 ## Fitting the model
 
-try changing categorical to 1 and 0
-
 ```{r}
-head(bihs)
-asset_lm <- lm(data = bihs, fcs ~ house_owned + asset_cartplough + asset_tractor + asset_motorbike + asset_telephone + asset_radio, na.action = 'na.fail')
-summary(asset_lm)
+asset_lm <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry + asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + memb_total + memb_und15 + memb_15_44 + hhs_total + bio_bio_1 + bio_bio_12 + house_owned + asset_cartplough + asset_telephone, na.action = 'na.fail')
 
-# collinearity check
+summary(asset_lm)
 vif(asset_lm)
 ```
 
-## Model assessment 
-
-```{r}
-# linearity and constant variance - predictors are categorical tho...?
-bihs <- bihs %>%
-  mutate(res = resid(asset_lm),
-         fitted = predict(asset_lm))
-gf_point(res ~ fitted, data = bihs) %>%
-  gf_labs(x = 'Fitted Values', y = 'Residuals')
-```
-
-```{r}
-# independence
-acf(resid(asset_lm), main = '')
-
-#normality of residuals
-gf_histogram(~res, data = bihs, bins = 15) # they look a bit right skewed...
-```
-
-## Model Assessment
-
-```{r}
-AIC_results <- dredge(asset_lm, rank = 'AIC')
-head(AIC_results, 7)
-
-BIC_results <- dredge(asset_lm, rank = 'BIC')
-head(BIC_results, 7)
-```
-
-```{r}
-# best bic model...?
-asset_lm_bic <- lm(data = bihs, fcs ~ asset_telephone, na.action = 'na.fail')
-summary(asset_lm_bic)
-```
-
-```{r}
-asset_lm_all <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry + asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + memb_total + memb_und15 + memb_15_44 + hhs_total + bio_bio_1 + bio_bio_12)
-summary(asset_lm_all)
-```
-
-```{r}
-vif(asset_lm_all)
-```
-
-
-```{r}
-bihs_original <- bihs_original%>% 
-  select(
-          fcs,
-          survey_year,
-          asset_qty_poultry,
-          asset_qty_cattle,
-          asset_qty_otherlivestock,
-          asset_qty_sheepgoat,
-          memb_total,
-          memb_und15,
-          memb_15_44,
-          hhs_total,
-          bio_bio_1,
-          bio_bio_12,
-          house_owned,
-          asset_cartplough, 
-          asset_telephone
-        ) %>%
-  na.omit()
-```
-
-```{r}
-asset_lm_all_two <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry + asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + memb_total + memb_und15 + memb_15_44 + hhs_total + bio_bio_1 + bio_bio_12 + house_owned + asset_cartplough + asset_telephone, na.action = 'na.fail')
-
-AIC(asset_lm_all_two, asset_lm_all_one)
-
-summary(asset_lm_all_two)
-car::vif(asset_lm_all_two)
-```
-
-```{r}
-# linearity and constant variance - predictors are categorical tho...?
-bihs_original <- bihs_original %>%
-  mutate(res = resid(asset_lm_all_two),
-         fitted = predict(asset_lm_all_two))
-gf_point(res ~ fitted, data = bihs_original) %>%
-  gf_labs(x = 'Fitted Values', y = 'Residuals')
-```
-```{r}
-# independence
-acf(resid(asset_lm_all_two), main = '')
-
-#normality of residuals
-gf_histogram(~res, data = bihs_original, bins = 15) # they look a bit right skewed...
-```
-```{r}
-AIC_results <- dredge(asset_lm_all_two, rank = 'AIC')
-head(AIC_results, 7)
-
-BIC_results <- dredge(asset_lm_all_two, rank = 'BIC')
-head(BIC_results, 7)
-```
-
+## Checking for multicollinearity between predictors
 
 ```{r}
 # checking for collinearity in quantitative predictors
@@ -216,16 +119,49 @@ predictors <- bihs_original %>% select(
 ggpairs(predictors)
 ggcorr(predictors)
 ```
+## Removing predictors with high correlation
+```{r}
+asset_lm_two <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry + asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + memb_15_44 + hhs_total + bio_bio_12 + house_owned + asset_cartplough + asset_telephone, na.action = 'na.fail')
+
+summary(asset_lm_two)
+vif(asset_lm_two)
+```
+
+## Model assessment 
 
 ```{r}
-vif(asset_lm_all_two)
+# linearity and constant variance
+bihs_original <- bihs_original %>%
+  mutate(res = resid(asset_lm_two),
+         fitted = predict(asset_lm_two))
+gf_point(res ~ fitted, data = bihs_original) %>%
+  gf_labs(x = 'Fitted Values', y = 'Residuals')
+
+# independence
+acf(resid(asset_lm_two), main = '')
+
+#normality of residuals
+gf_histogram(~res, data = bihs_original, bins = 15) # they look a bit right skewed...
 ```
 
 
+
+
+## Model selection
+
 ```{r}
-asset_lm_all_three <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry + asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + memb_und15 + memb_15_44 + hhs_total + bio_bio_12 + house_owned + asset_cartplough + asset_telephone, na.action = 'na.fail')
+AIC_results <- dredge(asset_lm_two, rank = 'AIC')
+head(AIC_results, 7)
 
-
-summary(asset_lm_all_three)
+BIC_results <- dredge(asset_lm_two, rank = 'BIC')
+head(BIC_results, 7)
 ```
+
+## ANOVA
+
+```{r}
+Anova(asset_lm_two)
+```
+
+
 
