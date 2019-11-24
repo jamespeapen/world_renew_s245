@@ -16,8 +16,6 @@ output:
 
 ```{r, setup, include=FALSE}
 require(mosaic)   # Load additional packages here 
-library(ggplot2)
-library(devtools)
 library(dplyr)
 library(stringr)
 knitr::opts_chunk$set(
@@ -34,7 +32,7 @@ require(RColorBrewer)
 
 
 ```{r}
-fname <- 'gadm36_BGD_4_sp.rds'
+fname <- 'gadm36_BGD_2_sp.rds'
 bangla_map <- readRDS(fname)
 class(bangla_map)
 ```
@@ -50,11 +48,13 @@ my.map <- leaflet(bangla_map) %>%
 ```
 
 ```{r}
+bangla_map$NAME_2
 my.map <- my.map %>% addPolygons()
+my.map
 ```
 
 ```{r}
-colrs <- colorNumeric(palette='Spectral', domain=c(-1,1))
+colrs <- colorNumeric(palette="Blues", domain=c(-1,1))
 ```
 
 
@@ -63,7 +63,9 @@ colrs <- colorNumeric(palette='Spectral', domain=c(-1,1))
 bihs_original <- readxl::read_excel('BIHS_household_2011_15.xlsx')
 bihs_map <- bihs_original %>% group_by(NAME_2) %>%
   summarise(ave_age = mean(~hhhead_age, na.rm = TRUE), 
-            literacy = prop(~hhhead_literate == "can read")) %>%
+            house_owned_prop = prop(~house_owned == "owned"),
+            literacy = prop(~hhhead_literate == "can read"),
+            phone_prop = prop(~asset_telephone == "Yes")) %>%
   ungroup()
 
 glimpse(bihs_map)
@@ -74,7 +76,9 @@ glimpse(bihs_map)
 ```{r}
 final_map <- merge(bangla_map@data, bihs_map, all.x = TRUE)
 
-bangla_map$literacy <- final_map$literacy
+bangla_map$ave_age <- final_map$ave_age
+bangla_map$phone_prop <- final_map$phone_prop
+bangla_map$house_owned_prop <- final_map$house_owned_prop
 ```
 ```{r}
 my.map <- leaflet(bangla_map) %>%
@@ -87,7 +91,7 @@ my.map <- leaflet(bangla_map) %>%
 color <-colorQuantile("YlOrRd", NULL, n = 5)
 my.map <- my.map %>% 
   addPolygons(
-  fillColor = (~literacy),
+  fillColor = ~phone_prop,
   weight = 2, #line thickness in pixels
   opacity = 1, #line opacity, 1 is totally opaque
   color = "white", #line color
