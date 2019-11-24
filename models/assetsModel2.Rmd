@@ -93,7 +93,10 @@ gf_boxplot(data = bihs, fcs ~ asset_radio)
 ## Fitting the model
 
 ```{r}
-asset_lm <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry + asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + memb_total + memb_und15 + memb_15_44 + hhs_total + bio_bio_1 + bio_bio_12 + house_owned + asset_cartplough + asset_telephone, na.action = 'na.fail')
+asset_lm <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry +
+                 asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + 
+                 memb_total + memb_und15 + memb_15_44 + hhs_total + bio_bio_1 + 
+                 bio_bio_12 + house_owned + asset_cartplough + asset_telephone, na.action = 'na.fail')
 
 summary(asset_lm)
 vif(asset_lm)
@@ -121,7 +124,10 @@ ggcorr(predictors)
 ```
 ## Removing predictors with high correlation
 ```{r}
-asset_lm_two <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry + asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + memb_15_44 + hhs_total + bio_bio_12 + house_owned + asset_cartplough + asset_telephone, na.action = 'na.fail')
+asset_lm_two <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry +
+                     asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + 
+                     memb_15_44 + hhs_total + bio_bio_12 + house_owned + asset_cartplough +
+                     asset_telephone, na.action = 'na.fail')
 
 summary(asset_lm_two)
 vif(asset_lm_two)
