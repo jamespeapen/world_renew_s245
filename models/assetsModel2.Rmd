@@ -76,7 +76,18 @@ bihs_original <- bihs_original%>%
   na.omit()
 ```
 
-## Exploratory plots
+
+
+The following document outlines our process for fitting a model that would predict food security score with the BIHS dataset. 
+
+We used the variable `fcs` as our response variable. This is the food consumption score in the BIHS dataset that is a similar measure to the food security scores used in the GAC Livelihoods regressions. For our predictors, we looked at the predictors from the GAC Livelihoods that were statistically significant, and tried to find similar predictors in the BIHS dataset, which was a difficult task. We determined that `house_owned` and all of the assets predictors would be good candidates. 
+
+We thought that the best way to go about determining what predictors were significant was to fit a model with as many variables from BIHS as we could, in addition to those found significant in the GAC Likelihoods regressions.
+
+
+# Exploratory plots
+
+We selected a few categorical variables for the BIHS dataset to see if there might be a relationship between the response `fcs` and the predictors. The boxplots are shown below.
 
 ```{r}
 # whether they owned/rented a house
@@ -90,7 +101,9 @@ gf_boxplot(data = bihs, fcs ~ asset_telephone)
 gf_boxplot(data = bihs, fcs ~ asset_radio)
 ```
 
-## Fitting the model
+# Fitting the model
+
+We encountered some problems while trying to fit all of our variables into a single model. The model below is one that worked the best for now. It includes our variables of interest: `asset_cartplough` and `house_owned`.
 
 ```{r}
 asset_lm <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry +
@@ -99,13 +112,14 @@ asset_lm <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poult
                  bio_bio_12 + house_owned + asset_cartplough + asset_telephone, na.action = 'na.fail')
 
 summary(asset_lm)
-vif(asset_lm)
 ```
 
-## Checking for multicollinearity between predictors
+# Checking for multicollinearity between predictors
 
-```{r}
+```{r fig.height= 5, fig.width=7}
 # checking for collinearity in quantitative predictors
+vif(asset_lm)
+
 predictors <- bihs_original %>% select(
                               survey_year,
                               asset_qty_poultry,
@@ -122,7 +136,14 @@ predictors <- bihs_original %>% select(
 ggpairs(predictors)
 ggcorr(predictors)
 ```
-## Removing predictors with high correlation
+
+
+
+
+# Removing predictors with high correlation
+
+Because we found correlations between some of the predictors, we decided to remove them and create a new model. The following model is the one we decided to use for this analysis.
+
 ```{r}
 asset_lm_two <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry +
                      asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + 
@@ -133,9 +154,9 @@ summary(asset_lm_two)
 vif(asset_lm_two)
 ```
 
-## Model assessment 
+# Model assessment 
 
-```{r}
+```{r fig.height=3, fig.width= 7}
 # linearity and constant variance
 bihs_original <- bihs_original %>%
   mutate(res = resid(asset_lm_two),
@@ -143,17 +164,19 @@ bihs_original <- bihs_original %>%
 gf_point(res ~ fitted, data = bihs_original) %>%
   gf_labs(x = 'Fitted Values', y = 'Residuals')
 
-# independence
+# independence of residuals
 acf(resid(asset_lm_two), main = '')
 
 #normality of residuals
 gf_histogram(~res, data = bihs_original, bins = 15) # they look a bit right skewed...
 ```
 
+All the conditions for a linear regression seem to be met by our model, no major problems with linearity, constant variance, independence of residuals or normality of residuals can be seen.
 
 
+# Model selection
 
-## Model selection
+We are demonstrating which predictors are the best at explaining the response variable in two ways: by using the `dredge` method, and the `Anova` method. The results are shown below.
 
 ```{r}
 AIC_results <- dredge(asset_lm_two, rank = 'AIC')
@@ -163,11 +186,18 @@ BIC_results <- dredge(asset_lm_two, rank = 'BIC')
 head(BIC_results, 7)
 ```
 
-## ANOVA
+AIC reports that cartplough, cattle, telephone, precipitation and household total are important predictors of food consumption score.
+
+BIC reports that cattle, telephone and household total are important predictors of food consumption scores.
+
+It is imporant to note that the IC scores above are really close to each other, so we chose the models that had the least number of predictors to make a decision on which was the best model, but this is subjective.
+
+
+# Analysis of Variance
 
 ```{r}
 Anova(asset_lm_two)
 ```
 
-
+ANOVA reports that cattle, household total, precipitation, cartplough, and telephone were significant at different significance levels which are outlined in the output above.
 
