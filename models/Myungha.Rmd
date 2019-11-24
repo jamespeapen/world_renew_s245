@@ -1,0 +1,169 @@
+---
+title: "Demographic Information Regression Model"
+author: "Myungha Kim (mk52)"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output: 
+  html_document:
+    fig_height: 2.2
+    fig_width: 4
+  pdf_document:
+    fig_height: 2.2
+    fig_width: 4
+  word_document:
+    fig_height: 2.2
+    fig_width: 4
+---
+
+```{r, setup, include = FALSE}
+# load packages that are going to be used
+require(tidyverse)   # this loads mosaic, ggformula, etc. too
+require(ggformula)
+require(mosaic)
+require(car)
+require(GGally)
+require(MuMIn)
+require(s245)
+
+# Some customization.  You can alter or delete as desired (if you know what you are doing).
+
+theme_set(theme_bw(base_size=12))     # change theme for ggplot2/ggformula
+
+knitr::opts_chunk$set(
+  echo = TRUE,      # for homework, always show R code (this is the default)
+  tidy = FALSE,     # display code as typed (rather than reformatted)
+  size = "small",   # slightly smaller font for code
+  message = FALSE, warning = FALSE) # don't print warnings or messages in compiled document. So you MUST check them in RStudio!
+```
+
+
+## Demographic Information 
+
+### Data Exploration 
+```{r}
+# importing the dataset with selected variables
+bihs_original <- read.csv("bihs_final.csv") %>%
+  mutate(year = factor(year))
+
+# selecting only demographic variables
+bihs <- bihs_original %>% 
+  select(year,
+         hhhead_gender, 
+         hhhead_education,
+         hhhead_literate,
+         memb_total, 
+         memb_und15,
+         memb_15_44,
+         fcs)
+
+# Data Exploration Plots
+gf_boxplot(fcs ~ year, data = subset(bihs, !is.na(year))) %>%
+  gf_jitter(color = 'grey', alpha = 0.2)
+
+gf_boxplot(fcs ~ hhhead_gender, data = subset(bihs, !is.na(hhhead_gender))) %>%
+  gf_jitter(color = 'grey', alpha = 0.2)
+
+gf_boxplot(fcs ~ hhhead_education, data = subset(bihs, !is.na(hhhead_education))) %>%
+  gf_jitter(color = 'grey', alpha = 0.2)
+
+gf_boxplot(fcs ~ hhhead_literate, data = subset(bihs, !is.na(hhhead_literate))) %>%
+  gf_jitter(color = 'grey', alpha = 0.2)
+
+gf_point(fcs ~ memb_total, data = subset(bihs, !is.na(memb_total)))
+
+gf_point(fcs ~ memb_und15, data = subset(bihs, !is.na(memb_und15)))
+
+gf_point(fcs ~ memb_15_44, data = subset(bihs, !is.na(memb_15_44)))
+```
+
+### Checking Correlation Coefficient
+```{r}
+# Correlation Coefficient heatmap 
+ggcorr(bihs, label = TRUE)
+```
+
+It does not seem to have severe correlation problem bewteen predictors with correlation coefficient under 0.8, but since this 0.8 threshold method is a very arbiturary rule, we will try VIF test. 
+
+
+### Checking Collinearity 
+```{r}
+# fiting linear regression model 
+demo_mod <- lm(fcs ~ year + hhhead_gender + hhhead_education + hhhead_literate + memb_total + memb_und15 + memb_15_44, data = bihs_original)
+
+summary(demo_mod)
+
+vif(demo_mod)
+```
+
+Using squared scaled GVIF scores, no predictors seems to have a collinearity problem with the value greater than 4. 
+
+
+### Model Fitting
+```{r}
+# checking non-constant variance for oher regression consideration
+
+# right skewness
+gf_histogram(~resid(demo_mod), bins = 11)
+
+# non-constant variance
+gf_point(resid(demo_mod) ~ fitted(demo_mod))
+```
+
+The linear model for demographic information does not show any non-constant variance condition nor right-skewed residuals. So, we will not consider other regression such as Gamma regression. 
+
+### Model Selection 
+```{r}
+bihs <- bihs %>%
+  na.omit()
+demo_mod <- update(demo_mod, na.action = 'na.fail')
+
+dredge_result <- dredge(demo_mod)
+head(dredge_result, 5) %>%
+  pander::pander()
+```
+
+The best model includes year, gender, literate, and memb_15_44. However, we would like to see how each predictors affect food secuity score, so we wouldn't ignore any of the predictors nor average the models. 
+
+### Model Assessment
+```{r}
+# Linearity & constant varince
+gf_point(resid(demo_mod) ~ fitted(demo_mod))
+
+# Independence of residuals 
+acf(resid(demo_mod))
+
+# Normality of residuals 
+gf_histogram(~resid(demo_mod), bins = 11)
+
+```
+
+Linearity and constant variance conditions seem to be met by checking residuals vs. fitted plot showing no trend or pattern. Independence of residuals condition also seem to be met with majority of lags within the confidence bounds. Residuals shows the normal distribution which meets the normality of residuals condition. 
+
+
+
+### Prediction Plots
+
+```{r}
+# Year
+pred_plot(demo_mod, 'year')
+
+# Gender
+pred_plot(demo_mod, 'hhhead_gender')
+
+# Education 
+pred_plot(demo_mod, 'hhhead_education')
+
+# Literate
+pred_plot(demo_mod, 'hhhead_literate')
+
+# memb_total
+pred_plot(demo_mod, 'memb_total')
+
+# memb_und15
+pred_plot(demo_mod, 'memb_und15')
+
+# memb_15_44
+pred_plot(demo_mod, 'memb_15_44')
+
+```
+
+
