@@ -144,7 +144,6 @@ vif(asset_lm_all)
 
 
 ```{r}
-<<<<<<< HEAD
 bihs_original <- bihs_original%>% 
   select(
           fcs,
@@ -166,14 +165,10 @@ bihs_original <- bihs_original%>%
   na.omit()
 ```
 
-
-
-
 ```{r}
-asset_lm_all_two <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry + asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + memb_total + memb_und15 + memb_15_44 + hhs_total + bio_bio_1 + bio_bio_12 + house_owned + asset_cartplough + asset_telephone, na.action = 'na.fail')
-=======
-asset_lm_all_two <- lm(data = bihs_original, fcs ~  survey_year + asset_qty_poultry + asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + memb_total + memb_und15 + memb_15_44 + hhs_total + bio_bio_1 + bio_bio_12 + house_owned + asset_cartplough + asset_telephone)
->>>>>>> 68159deeb015419a78b61d0a8da6066138915842
+asset_lm_all_one <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry + asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + memb_total + memb_und15 + memb_15_44 + hhs_total + bio_bio_1 + bio_bio_12 + house_owned + asset_cartplough + asset_telephone, na.action = 'na.fail')
+
+AIC(asset_lm_all_two, asset_lm_all_one)
 
 summary(asset_lm_all_two)
 car::vif(asset_lm_all_two)
