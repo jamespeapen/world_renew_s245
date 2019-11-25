@@ -91,7 +91,7 @@ my.map <- leaflet(bangla_map) %>%
 color <-colorQuantile("YlOrRd", NULL, n = 5)
 my.map <- my.map %>% 
   addPolygons(
-  fillColor = ~phone_prop,
+  fillColor = ~color(phone_prop),
   weight = 2, #line thickness in pixels
   opacity = 1, #line opacity, 1 is totally opaque
   color = "white", #line color
