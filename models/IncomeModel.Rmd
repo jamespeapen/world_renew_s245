@@ -1,0 +1,97 @@
+---
+title: "Income Model"
+author: "A. Student"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output: 
+  html_document:
+    fig_height: 2.2
+    fig_width: 4
+  pdf_document:
+    fig_height: 2.2
+    fig_width: 4
+  word_document:
+    fig_height: 2.2
+    fig_width: 4
+---
+
+```{r, setup, include = FALSE}
+# load packages that are going to be used
+require(tidyverse)   # this loads mosaic, ggformula, etc. too
+require(ggformula)
+require(mosaic)
+
+# to read excel files
+require(readxl)
+# for collinearity
+require(GGally)
+# for IC
+require(MuMIn)
+# for VIF
+require(car)
+
+
+# Some customization.  You can alter or delete as desired (if you know what you are doing).
+
+theme_set(theme_bw(base_size=12))     # change theme for ggplot2/ggformula
+
+knitr::opts_chunk$set(
+  echo = TRUE,      # for homework, always show R code (this is the default)
+  tidy = FALSE,     # display code as typed (rather than reformatted)
+  size = "small",   # slightly smaller font for code
+  message = FALSE, warning = FALSE) # don't print warnings or messages in compiled document. So you MUST check them in RStudio!
+```
+
+
+```{r, include = FALSE}
+# reading in the data
+bihs <- read_csv('bihs_final.csv')
+bihs_original <- read_excel('../tidy_dataset/BIHS_household_2011_15.xlsx')
+```
+
+
+```{r, include = FALSE}
+bihs <- bihs%>%mutate(house_owned = bihs_original$house_owned)
+bihs_original$survey_year <- as.factor(bihs_original$survey_year)
+```
+
+```{r}
+# changing yes into 1s
+
+bihs_original = bihs_original%>%mutate(asset_cartplough = ifelse(asset_cartplough=="Yes", "1", "0"),
+                                       asset_television = ifelse(asset_television=="Yes", 1, 0),
+                                       asset_telephone = ifelse(asset_telephone=="Yes", 1, 0),
+                                       asset_tractor = ifelse(asset_tractor=="Yes", 1, 0),
+                                       asset_radio = ifelse(asset_radio=="Yes", 1, 0),
+                                       asset_motorbike = ifelse(asset_motorbike=="Yes", 1, 0),
+                                       asset_cartplough = as.numeric(asset_cartplough)
+                                       )
+
+```
+
+```{r}
+# create the new variable 
+bihs_original <- bihs_original%>%mutate(tech_asset_count = asset_cartplough + asset_television + 
+                                         asset_telephone + asset_tractor + asset_radio + asset_motorbike)
+
+
+
+```
+
+```{r}
+bihs_original$tech_asset_count <- bihs_original$asset_cartplough + bihs_original$asset_television +                                bihs_original$asset_telephone + bihs_original$asset_tractor + bihs_original$asset_radio +
+                    bihs_original$asset_motorbike 
+```
+
+
+
+```{r}
+# linear regression
+```
+
+
+
+
+
+
+
+  
