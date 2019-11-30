@@ -96,7 +96,16 @@ my.map <- my.map %>%
   opacity = 1, #line opacity, 1 is totally opaque
   color = "white", #line color
   dashArray = "3", #type of lines. see help file for addPolygons and link there for more info...this is dotted lines
-  fillOpacity = 0.7)
+  fillOpacity = 0.7,
+  highlight = highlightOptions(
+    weight = 5,
+    color = "#666",
+    dashArray = "",
+    fillOpacity = 0.7,
+    bringToFront = TRUE),
+  label = labels,
+  labelOptions = labelOptions(style = list("font-weight" = "normal", padding = "3px 8px"),
+                              textsize = "15px", direction = "auto"))
 my.map
 ```
 
