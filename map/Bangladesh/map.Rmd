@@ -1,0 +1,112 @@
+---
+title: "BIHS Map"
+author: ""
+date: ""
+output: 
+  pdf_document:
+    fig_height: 3
+    fig_width: 5
+  html_document:
+    fig_height: 3
+    fig_width: 5
+  word_document:
+    fig_height: 3
+    fig_width: 5
+---
+
+```{r, setup, include=FALSE}
+require(mosaic)   # Load additional packages here 
+library(dplyr)
+library(stringr)
+knitr::opts_chunk$set(
+  tidy=FALSE, cache = TRUE,    # display code as typed
+  size="small")   # slightly smaller font for code
+```
+
+
+```{r}
+require(leaflet)
+require(sp)
+require(RColorBrewer)
+```
+
+
+```{r}
+fname <- 'gadm36_BGD_2_sp.rds'
+bangla_map <- readRDS(fname)
+class(bangla_map)
+```
+
+```{r}
+names(bangla_map)
+```
+
+```{r}
+my.map <- leaflet(bangla_map) %>%
+  setView(lat = 23.6850, lng = 90.3563, zoom = 6) %>%
+  addTiles()
+```
+
+```{r}
+bangla_map$NAME_2
+my.map <- my.map %>% addPolygons()
+my.map
+```
+
+```{r}
+colrs <- colorNumeric(palette="Blues", domain=c(-1,1))
+```
+
+
+```{r}
+# coloring map based on dataset
+bihs_original <- readxl::read_excel('BIHS_household_2011_15.xlsx')
+bihs_map <- bihs_original %>% group_by(NAME_2) %>%
+  summarise(ave_age = mean(~hhhead_age, na.rm = TRUE), 
+            house_owned_prop = prop(~house_owned == "owned"),
+            literacy = prop(~hhhead_literate == "can read"),
+            phone_prop = prop(~asset_telephone == "Yes")) %>%
+  ungroup()
+
+glimpse(bihs_map)
+
+
+```
+
+```{r}
+final_map <- merge(bangla_map@data, bihs_map, all.x = TRUE)
+
+bangla_map$ave_age <- final_map$ave_age
+bangla_map$phone_prop <- final_map$phone_prop
+bangla_map$house_owned_prop <- final_map$house_owned_prop
+```
+```{r}
+my.map <- leaflet(bangla_map) %>%
+  setView(lat = 23.6850, lng = 90.3563, zoom = 6) %>%
+  addTiles()
+```
+
+
+```{r}
+color <-colorQuantile("YlOrRd", NULL, n = 5)
+my.map <- my.map %>% 
+  addPolygons(
+  fillColor = ~color(phone_prop),
+  weight = 2, #line thickness in pixels
+  opacity = 1, #line opacity, 1 is totally opaque
+  color = "white", #line color
+  dashArray = "3", #type of lines. see help file for addPolygons and link there for more info...this is dotted lines
+  fillOpacity = 0.7,
+  highlight = highlightOptions(
+    weight = 5,
+    color = "#666",
+    dashArray = "",
+    fillOpacity = 0.7,
+    bringToFront = TRUE),
+  label = labels,
+  labelOptions = labelOptions(style = list("font-weight" = "normal", padding = "3px 8px"),
+                              textsize = "15px", direction = "auto"))
+my.map
+```
+
+
