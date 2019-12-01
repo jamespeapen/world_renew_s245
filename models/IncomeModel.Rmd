@@ -48,15 +48,41 @@ bihs <- read_csv('bihs_final.csv')
 bihs_original <- read_excel('../tidy_dataset/BIHS_household_2011_15.xlsx')
 ```
 
-
 ```{r, include = FALSE}
+# data prep
 bihs <- bihs%>%mutate(house_owned = bihs_original$house_owned)
 bihs_original$survey_year <- as.factor(bihs_original$survey_year)
 ```
 
 ```{r}
-# changing yes into 1s
+# selecting data
+bihs_original <- bihs_original%>% 
+  select(
+          fcs,
+          survey_year,
+          asset_qty_poultry,
+          asset_qty_cattle,
+          asset_qty_otherlivestock,
+          asset_qty_sheepgoat,
+          memb_total,
+          memb_und15,
+          memb_15_44,
+          hhs_total,
+          bio_bio_1,
+          bio_bio_12,
+          house_owned,
+          asset_cartplough, 
+          asset_telephone,
+          asset_tractor,
+          asset_motorbike,
+          asset_television,
+          asset_radio
+        )
+```
 
+
+```{r}
+# changing yes to 1 and no to 0
 bihs_original = bihs_original%>%mutate(asset_cartplough = ifelse(asset_cartplough=="Yes", "1", "0"),
                                        asset_television = ifelse(asset_television=="Yes", 1, 0),
                                        asset_telephone = ifelse(asset_telephone=="Yes", 1, 0),
@@ -69,23 +95,39 @@ bihs_original = bihs_original%>%mutate(asset_cartplough = ifelse(asset_cartploug
 ```
 
 ```{r}
-# create the new variable 
+# create the new variable to use as the response
 bihs_original <- bihs_original%>%mutate(tech_asset_count = asset_cartplough + asset_television + 
-                                         asset_telephone + asset_tractor + asset_radio + asset_motorbike)
+                                         asset_telephone + asset_tractor + asset_radio + 
+                                         asset_motorbike, tech_asset_count = 
+                                         as.numeric(tech_asset_count))
 
-
-
-```
-
-```{r}
-bihs_original$tech_asset_count <- bihs_original$asset_cartplough + bihs_original$asset_television +                                bihs_original$asset_telephone + bihs_original$asset_tractor + bihs_original$asset_radio +
-                    bihs_original$asset_motorbike 
 ```
 
 
 
+
+# Exploratory plots
+
+We selected a fewvariables for the BIHS dataset to see if there might be a relationship between the response `tech_asset_count` and the predictors. The boxplots are shown below.
+
 ```{r}
-# linear regression
+# whether they owned/rented a house
+gf_point(data = bihs_original, tech_asset_count ~ fcs )
+gf_boxplot(data = bihs_original, tech_asset_count ~ house_owned)
+gf_point(data = bihs_original, tech_asset_count ~ asset_qty_sheepgoat)
+
+```
+
+
+
+```{r, error=TRUE}
+# regression
+income_glm <- glm(data = bihs_original, tech_asset_count ~ asset_qty_poultry +
+                 asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + 
+                 memb_total + memb_und15 + memb_15_44 + hhs_total + bio_bio_1 + 
+                 bio_bio_12 + house_owned, family=poisson(link='log'), na.action = 'na.fail')
+
+summary(income_glm)
 ```
 
 
