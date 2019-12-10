@@ -33,13 +33,83 @@ knitr::opts_chunk$set(
 ## Data import
 ```{r}
 bihs <- read_excel('../tidy_dataset/BIHS_household_2011_15.xlsx')
+write.csv(bihs, file = "bihs.csv")
+```
 
+# Livestock Assets
+
+```{r}
+# data prep
 bihs <- bihs %>% mutate(livestock = ifelse(asset_qty_poultry + asset_qty_cattle + asset_qty_sheepgoat + asset_qty_otherlivestock > 0, 1, 0))
 ```
-
-## Livestock Assets  
 ```{r}
-gf_bar(livestock~factor(year), data = bihs, stat = 'identity')
-gf_bar(livestock~factor(year), data = bihs, stat = 'identity')
+year_11 <- filter(bihs, survey_year == "2011")
+summary(year_11$livestock)%>%
+  pander::pander()
+
+year_15 <- filter(bihs, survey_year == "2015")
+summary(year_15$livestock)%>%
+  pander::pander()
 ```
 
+# Technological Assets Summary
+
+```{r}
+# data prep
+bihs <- bihs %>% mutate(motorbike = ifelse(asset_motorbike == "Yes", 1, 0),
+                        telephone = ifelse(asset_telephone == "Yes", 1, 0),
+                        television = ifelse(asset_television == "Yes", 1, 0),
+                        cartplough = ifelse(asset_cartplough == "Yes", 1, 0),
+                        radio = ifelse(asset_radio == "Yes", 1, 0),
+                        tractor = ifelse(asset_tractor == "Yes", 1, 0)
+                        )
+year_11 <- filter(bihs, survey_year == "2011")
+year_15 <- filter(bihs, survey_year == "2015")
+```
+
+## Motorbike
+```{r}
+summary(year_11$motorbike)%>%
+  pander::pander()
+summary(year_15$motorbike)%>%
+  pander::pander()
+```
+## Telephone
+```{r}
+summary(year_11$telephone)%>%
+  pander::pander()
+summary(year_15$telephone)%>%
+  pander::pander()
+```
+
+## Television
+```{r}
+summary(year_11$television)%>%
+  pander::pander()
+summary(year_15$television)%>%
+  pander::pander()
+```
+
+## Cartplough
+```{r}
+summary(year_11$cartplough)%>%
+  pander::pander()
+summary(year_15$cartplough)%>%
+  pander::pander()
+```
+
+## Radio
+```{r}
+summary(year_11$radio)%>%
+  pander::pander()
+summary(year_15$radio)%>%
+  pander::pander()
+```
+
+## Tractor
+```{r}
+summary(year_11$tractor)%>%
+  pander::pander()
+summary(year_15$tractor)%>%
+  pander::pander()
+```
