@@ -1,0 +1,220 @@
+---
+title: "BIHS Model Fitting"
+subtitle: "STAT-245, Calvin University"
+author: "Ivanna Rodriguez, Myungha Kim, James Eapen"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output: 
+  pdf_document:
+    fig_height: 2.2
+    fig_width: 4
+    toc: true
+    toc_depth: 2
+  html_document:
+    fig_height: 2.2
+    fig_width: 4
+  word_document:
+    fig_height: 2.2
+    fig_width: 4
+---
+
+```{r, setup, include = FALSE}
+# load packages that are going to be used
+require(tidyverse)   # this loads mosaic, ggformula, etc. too
+require(ggformula)
+require(mosaic)
+
+# to read excel files
+require(readxl)
+# for collinearity
+require(GGally)
+# for IC
+require(MuMIn)
+# for VIF
+require(car)
+
+
+# Some customization.  You can alter or delete as desired (if you know what you are doing).
+
+theme_set(theme_bw(base_size=12))     # change theme for ggplot2/ggformula
+
+knitr::opts_chunk$set(
+  echo = TRUE,      # for homework, always show R code (this is the default)
+  tidy = FALSE,     # display code as typed (rather than reformatted)
+  size = "small",   # slightly smaller font for code
+  message = FALSE, warning = FALSE) # don't print warnings or messages in compiled document. So you MUST check them in RStudio!
+```
+
+# Data Preparation
+
+```{r, include = FALSE}
+# reading in the data
+bihs <- read_csv('bihs_final.csv')
+bihs_original <- read_excel('../tidy_dataset/BIHS_household_2011_15.xlsx')
+bihs <- bihs%>%mutate(house_owned = bihs_original$house_owned)
+bihs_original$survey_year <- as.factor(bihs_original$survey_year)
+```
+
+```{r, include = FALSE}
+# selecting the variables we're going to use for our model
+bihs_original <- bihs_original%>% 
+  select(
+          fcs,
+          survey_year,
+          asset_qty_poultry,
+          asset_qty_cattle,
+          asset_qty_otherlivestock,
+          asset_qty_sheepgoat,
+          memb_total,
+          memb_und15,
+          memb_15_44,
+          hhs_total,
+          bio_bio_1,
+          bio_bio_12,
+          house_owned,
+          asset_cartplough, 
+          asset_telephone,
+        ) %>%
+  na.omit()
+```
+
+
+
+The following document outlines our process looking at the factors that are associated with variations in the Food Consumption Score which is a numeric score with values ranging from 0 to 120. This score is calculated by International Food Policy Research Institute. BIHS dataset was filtered by specific regions in Bangladesh where World Renew ran their programs. 
+
+We used the variable `fcs` as our response variable because according to our client, this variable was the closest measure to the food security scores used in the GAC Livelihoods regressions. For our predictors, we looked at the predictors from the GAC Livelihoods that were statistically significant, and tried to find similar predictors in the BIHS dataset, which was a difficult task. We determined that `house_owned` and all of the assets predictors would be good candidates. In addition to these variables, we decided to include demographic variables such as total number of household members and a couple biophysical predictors like percipitation (`bio_bio_12`) and temprature (`bio_bio_1`).
+
+
+
+# Exploratory plots
+
+We selected a few categorical variables for the BIHS dataset to see if there might be a relationship between the response variable `fcs` and these predictors. The boxplots are shown below.
+
+```{r}
+# whether they owned/rented a house
+gf_boxplot(data = bihs, fcs ~ house_owned)
+
+# tech assets
+gf_boxplot(data = bihs, fcs ~ asset_cartplough)
+gf_boxplot(data = bihs, fcs ~ asset_tractor)
+gf_boxplot(data = bihs, fcs ~ asset_motorbike)
+gf_boxplot(data = bihs, fcs ~ asset_telephone)
+gf_boxplot(data = bihs, fcs ~ asset_radio)
+```
+
+From the boxplots above, there is a positive correltation between `fcs` and all our technological assets. In addition, for our `house_owned` variable, the plot shows higher `fcs` scores for those who own and/or rent their house. We also can see there are a lot of missing values in our dataset which is concerning. 
+
+
+
+# Fitting the model
+
+We encountered some problems while trying to fit all of our variables into a single model. The model below is one that worked the best. It includes our two main variables of interest: `asset_cartplough` and `house_owned`.
+
+```{r}
+asset_lm <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry +
+                 asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + 
+                 memb_total + memb_und15 + memb_15_44 + hhs_total + bio_bio_1 + 
+                 bio_bio_12 + house_owned + asset_cartplough + asset_telephone, na.action = 'na.fail')
+
+summary(asset_lm)
+```
+
+We can see that this model shows a low Adjusted R-squared value which is 0.2641. This implies that our model explains only 26 percent of the variation in the response. 
+
+
+
+# Checking for multicollinearity between predictors
+
+We wanted to check for multicollinearity between our predictors to eliminate the possibility of inflated variance  by getting rid of highly correlated predictors. 
+
+
+```{r fig.height= 5, fig.width=7}
+# checking for collinearity in quantitative predictors
+vif(asset_lm)
+
+predictors <- bihs_original %>% select(
+                              survey_year,
+                              asset_qty_poultry,
+                              asset_qty_cattle,
+                              asset_qty_otherlivestock,
+                              asset_qty_sheepgoat,
+                              memb_total,
+                              memb_und15,
+                              memb_15_44,
+                              hhs_total,
+                              bio_bio_1,
+                              bio_bio_12
+                              )
+ggpairs(predictors)
+ggcorr(predictors)
+```
+
+After checking for multicollinearity, we decided to eliminate `memb_total` and `bio_bio_1` which are shown to be highly correlated in the correlation matrix plot. 
+
+
+
+# Fitting a new model
+
+We decided to fit a new model without highly correlated predictors. This is the model we decided to use for this analysis.
+
+```{r}
+asset_lm_two <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry +
+                     asset_qty_cattle + asset_qty_otherlivestock + asset_qty_sheepgoat + 
+                     memb_15_44 + hhs_total + bio_bio_12 + house_owned + asset_cartplough +
+                     asset_telephone, na.action = 'na.fail')
+
+summary(asset_lm_two)
+vif(asset_lm_two)
+```
+
+# Model assessment 
+
+```{r fig.height=3, fig.width= 7}
+# linearity and constant variance
+bihs_original <- bihs_original %>%
+  mutate(res = resid(asset_lm_two),
+         fitted = predict(asset_lm_two))
+gf_point(res ~ fitted, data = bihs_original) %>%
+  gf_labs(x = 'Fitted Values', y = 'Residuals')
+
+# independence of residuals
+acf(resid(asset_lm_two), main = '')
+
+#normality of residuals
+gf_histogram(~res, data = bihs_original, bins = 15) # they look a bit right skewed...
+```
+
+All the conditions for a linear regression seem to be met by our model, no major problems with linearity, constant variance, independence of residuals or normality of residuals can be seen.
+
+
+# Model selection
+
+We are demonstrating which predictors are the best at explaining the response variable in two ways: by using the `dredge` method, and the `Anova` method. The results are shown below.
+
+```{r}
+AIC_results <- dredge(asset_lm_two, rank = 'AIC')
+head(AIC_results, 7)
+
+BIC_results <- dredge(asset_lm_two, rank = 'BIC')
+head(BIC_results, 7)
+```
+
+AIC reports that cartplough, cattle, telephone, precipitation and household total are important predictors of food consumption score.
+
+BIC reports that cattle, telephone and household total are important predictors of food consumption score.
+
+It is important to note that the IC scores above are really close to each other. We did not consider model averaging because we were more interested in looking at which predictors are better at explaining the variation in the response variable `fcs` rather than getting the most accurate estimate of `fcs`. We chose the model that has the fewest predictors in the BIC output as our best model.
+
+
+# Analysis of Variance
+
+```{r}
+Anova(asset_lm_two)
+```
+
+ANOVA output above reports that cattle, household total, precipitation, cartplough, and telephone were significant at at least a 0.05 significance level.
+
+
+
+# Conclusion
+
+Our research question cannot be answered from our study of BIHS dataset above. Although both response variables in both datasets are similar measures of food security, we had so many missing predictors in BIHS dataset that were not present that were used in the regression for GAC Livelihoods survey. Due to this challenge, we do not think the Differnece-in-Difference analysis can be carried out. Therefore, we cannot conclude whether the GAC Livelihoods programs had a positive impact we can analyze using the BIHS dataset. 

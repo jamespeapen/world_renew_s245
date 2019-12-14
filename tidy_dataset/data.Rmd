@@ -1,12 +1,12 @@
 ---
-title: "Stat 245 -- HW ??"
-author: "A. Student"
+title: "Stat 245 -- Tidy Dataset"
+author: "James Eapen, Myungha Kim, Ivanna Rodriguez"
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
 output: 
-  html_document:
+  pdf_document:
     fig_height: 2.2
     fig_width: 4
-  pdf_document:
+  html_document:
     fig_height: 2.2
     fig_width: 4
   word_document:
@@ -31,13 +31,65 @@ knitr::opts_chunk$set(
   message = FALSE, warning = FALSE) # don't print warnings or messages in compiled document. So you MUST check them in RStudio!
 ```
 
+## Read dataset
+```{r}
+bihs_household <- readxl::read_excel('BIHS_household_2011_15.xlsx')
+```
+## Set year as a categorical variable
+```{r}
+bihs_household <- bihs_household %>% mutate(survey_year = factor(survey_year))
+```
 
-<!-- Farmers training-->
+## Rename variables
+```{r}
+bihs_household <- bihs_household %>% rename(year = survey_year, 
+                                            id = a01,
+                                            mean_annual_temp = bio_bio_1 ,
+                                            annual_precip = bio_bio_12,
+                                            gender_parity_gap = weai_parity_gap)
+```
 
-<!-- Savings -->
+## Select variables of interest
+```{r}
+final_bihs <- bihs_household %>% select(id,
+                                        year,
+                                        hhhead_gender,
+                                        hhhead_education,
+                                        hhhead_literate,
+                                        memb_total,
+                                        memb_und15,
+                                        memb_15_44,
+                                        gender_parity_gap,
+                                        asset_cartplough, 
+                                        asset_motorbike,
+                                        asset_qty_poultry,
+                                        asset_qty_cattle,
+                                        asset_qty_otherlivestock,
+                                        asset_qty_sheepgoat,
+                                        asset_television,
+                                        asset_radio,
+                                        asset_telephone,
+                                        asset_tractor,
+                                        asset_television,
+                                        fcs,
+                                        hhs_total,
+                                        mean_annual_temp,
+                                        annual_precip)
+write.csv(final_bihs, "bihs_final.csv")
+```
 
-<!-- Food Security -->
+```{r}
+glimpse(final_bihs)
+```
+
+Plots
+```{r}
+gf_boxplot(fcs ~ year, data = final_bihs, ylab = "Food Consumption score", xlab = "Year") 
+
+gf_point(fcs ~ gender_parity_gap, data = final_bihs, xlab = "Gender Parity Gap", ylab = "Food Consumption Score")
+gf_boxplot(fcs ~ factor(hhs_total), data = final_bihs, xlab = "Household Hunger Total", ylab = "Food Consumption Score")
+gf_bar(~hhhead_gender, data = subset(final_bihs, !is.na(asset_telephone)), xlab = "Gender", ylab = "Count", fill = ~ asset_telephone, factor(year))
+
+```
 
 
-
-  

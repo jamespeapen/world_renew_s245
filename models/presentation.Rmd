@@ -1,0 +1,142 @@
+---
+title: "Food Security Analysis for World Renew Global Affairs Canada"
+author: "James Eapen, Myungha Kim, Ivanna Rodriguez"
+date: "11/19/2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggformula)
+bihs <- readxl::read_excel("../tidy_dataset/BIHS_household_2011_15.xlsx")
+bihs$survey_year = as.factor(bihs$survey_year)
+```
+
+## Introduction
+\n
+![](WR_logos-1.png)
+
+
+\n
+
+World Renew wanted an analysis of the effectiveness of their programs in Bangladesh that were aimed at improving food security.
+
+
+## Sustainable Livelihoods Program
+
+  - A program implemented by World Renew in five countries to enhance livelihood security for vulnerable households from 2012 to 2017.
+  - Three main focuses of the program: 
+  - Food Security
+  - Sustainable Economic Growth, Community Governance Capacity
+    
+
+## Questions
+How is food security affected by assets and demographicsby assets and demographics?  
+\n
+Assets include : farming equipment, livestock and electronics.  
+\n
+Demographics include : gender, year, number of household members, literacy, and measures and climate conditions measures.
+
+## BIHS
+The Bangladesh Integrated Household Survey is a survey of households across the country that includes variables about:
+
+ - Food security
+ - Women's empowerment
+ - Household assets
+ - Literacy and education
+ - Climate conditions
+ 
+We had data from 2011 to 2015 which was the same time period that World Renew had their programs.
+
+They wanted us to see whether an external dataset reflected any changes that could be attributed to the program.
+
+
+## Survey Year
+```{r, warning=FALSE}
+gf_boxplot(data = bihs, fcs ~ survey_year, 
+           na.rm = TRUE, 
+           xlab = "Survey Year", ylab = "Food Consumption Score")
+```
+
+## House Ownership
+```{r, warning=FALSE}
+gf_boxplot(data = bihs, fcs ~ factor(house_owned), 
+           na.rm = TRUE, 
+           xlab = "House Owned", ylab = "Food Consumption Score")
+
+```
+
+## Asset: Cartplough
+```{r, warning=FALSE}
+gf_boxplot(data = bihs, fcs ~ factor(asset_cartplough), 
+           na.rm = TRUE, 
+           xlab = "Has Cartplough", ylab = "Food Consumption Score")
+
+```
+
+## Asset: Telephone
+```{r, warning=FALSE}
+gf_boxplot(data = bihs, fcs ~ factor(asset_telephone), 
+           na.rm = TRUE, 
+           xlab = "Has Telephone", ylab = "Food Consumption Score")
+
+```
+
+
+\n
+They wanted us to see whether an external dataset reflected any changes that could be attributed to the program.
+
+## Model
+
+```{r, echo=FALSE}
+bihs_lm <- lm(data = bihs, fcs ~ factor(survey_year) + 
+                asset_qty_poultry + asset_qty_cattle + 
+                asset_qty_otherlivestock + asset_qty_sheepgoat + 
+                memb_total + memb_und15 + memb_15_44 + 
+                hhs_total + bio_bio_1 + bio_bio_12 + 
+                house_owned + asset_cartplough + 
+                asset_telephone)
+
+#car::vif(bihs_lm)
+```
+
+Response variable: Food consumption score  
+Predictors: 
+
+ - Year
+ - Poultry
+ - Cattle
+ - Sheep/goat
+ - Ownership of telephone, house, cartplough
+ - Household members, members under 15, members between 15 and 44
+ - Houshold hunger score
+ - Annual rainfall and temperature
+ 
+$R^2$ = 0.26
+
+## Challenges
+\n
+Some of the categorical variables values do not have much variation which does not allow us to model the regression successfully \n 
+(e.g. assets_poultry, there were a lot of people who don’t have poultry which is recorded as 0, not much variation within the values)
+
+\n
+There might be some combination of values of categorical predictors that don’t exist 
+
+\n
+Categorical variable such as hhs_education has too many categories
+
+\n
+Variables might have incomplete possible values
+
+\n
+
+There are some combination of values of categorical predictors that don’t exist 
+
+## Plan of Action
+\n
+ - Fit all the quantitative variables first, then add categorical variables one by one 
+ - Figure out which variable cause the problem 
+ - Change to numeric variables
+ - Delete variables
+ - Collapse variables together
+ - Cut down on the number of categories for variables

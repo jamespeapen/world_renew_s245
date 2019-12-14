@@ -1,0 +1,115 @@
+---
+title: "BIHS Descriptive Statistics"
+output: html_document
+---
+
+```{r, setup, include = FALSE}
+# load packages that are going to be used
+require(tidyverse)   # this loads mosaic, ggformula, etc. too
+require(ggformula)
+require(mosaic)
+
+# to read excel files
+require(readxl)
+# for collinearity
+require(GGally)
+# for IC
+require(MuMIn)
+# for VIF
+require(car)
+
+
+# Some customization.  You can alter or delete as desired (if you know what you are doing).
+
+theme_set(theme_bw(base_size=12))     # change theme for ggplot2/ggformula
+
+knitr::opts_chunk$set(
+  echo = TRUE,      # for homework, always show R code (this is the default)
+  tidy = FALSE,     # display code as typed (rather than reformatted)
+  size = "small",   # slightly smaller font for code
+  message = FALSE, warning = FALSE) # don't print warnings or messages in compiled document. So you MUST check them in RStudio!
+```
+
+## Data import
+```{r}
+bihs <- read_excel('../tidy_dataset/BIHS_household_2011_15.xlsx')
+write.csv(bihs, file = "bihs.csv")
+```
+
+# Livestock Assets
+
+```{r}
+# data prep
+bihs <- bihs %>% mutate(livestock = ifelse(asset_qty_poultry + asset_qty_cattle + asset_qty_sheepgoat + asset_qty_otherlivestock > 0, 1, 0))
+```
+```{r}
+year_11 <- filter(bihs, survey_year == "2011")
+summary(year_11$livestock)%>%
+  pander::pander()
+
+year_15 <- filter(bihs, survey_year == "2015")
+summary(year_15$livestock)%>%
+  pander::pander()
+```
+
+# Technological Assets Summary
+
+```{r}
+# data prep
+bihs <- bihs %>% mutate(motorbike = ifelse(asset_motorbike == "Yes", 1, 0),
+                        telephone = ifelse(asset_telephone == "Yes", 1, 0),
+                        television = ifelse(asset_television == "Yes", 1, 0),
+                        cartplough = ifelse(asset_cartplough == "Yes", 1, 0),
+                        radio = ifelse(asset_radio == "Yes", 1, 0),
+                        tractor = ifelse(asset_tractor == "Yes", 1, 0)
+                        )
+year_11 <- filter(bihs, survey_year == "2011")
+year_15 <- filter(bihs, survey_year == "2015")
+```
+
+## Motorbike
+```{r}
+summary(year_11$motorbike)%>%
+  pander::pander()
+summary(year_15$motorbike)%>%
+  pander::pander()
+```
+## Telephone
+```{r}
+summary(year_11$telephone)%>%
+  pander::pander()
+summary(year_15$telephone)%>%
+  pander::pander()
+```
+
+## Television
+```{r}
+summary(year_11$television)%>%
+  pander::pander()
+summary(year_15$television)%>%
+  pander::pander()
+```
+
+## Cartplough
+```{r}
+summary(year_11$cartplough)%>%
+  pander::pander()
+summary(year_15$cartplough)%>%
+  pander::pander()
+```
+
+## Radio
+```{r}
+summary(year_11$radio)%>%
+  pander::pander()
+summary(year_15$radio)%>%
+  pander::pander()
+```
+
+## Tractor
+```{r}
+summary(year_11$tractor)%>%
+  pander::pander()
+summary(year_15$tractor)%>%
+  pander::pander()
+```

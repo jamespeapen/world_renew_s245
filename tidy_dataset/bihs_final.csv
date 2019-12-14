@@ -1,0 +1,545 @@
+"","id","year","hhhead_gender","hhhead_education","hhhead_literate","memb_total","memb_und15","memb_15_44","gender_parity_gap","asset_cartplough","asset_motorbike","asset_qty_poultry","asset_qty_cattle","asset_qty_otherlivestock","asset_qty_sheepgoat","asset_television","asset_radio","asset_telephone","asset_tractor","fcs","hhs_total","mean_annual_temp","annual_precip"
+"1",1181,"2011","male","complete","can read",4,1,2,0.1,"No","Yes",0,0,0,0,"Yes","No","Yes","No",59,6,25.6,1919
+"2",1182,"2011","female","never at","can sign",1,0,1,NA,"No","No",0,0,0,0,"Yes","No","No","No",24.5,6,25.6,1919
+"3",1183,"2011","male","never at","can sign",5,1,3,0,"No","No",0,0,0,0,"No","No","Yes","No",79.5,6,25.6,1920
+"4",1184,"2011","male","never at","can sign",4,2,2,-0.1,"No","No",0,0,0,0,"No","Yes","Yes","No",59.5,6,25.6,1920
+"5",1185,"2011","male","never at","can sign",3,1,1,0.1666667,"No","No",0,0,0,0,"No","No","Yes","No",40.5,6,25.6,1920
+"6",1186,"2011","male","complete","can read",5,1,2,0.2333333,"No","No",0,0,0,0,"No","No","Yes","No",87.5,6,25.6,1920
+"7",1187,"2011","female","never at","can sign",1,0,0,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",44.5,6,25.6,1919
+"8",1188,"2011","male","complete","can read",6,2,3,0.0666667,"No","No",0,0,0,0,"Yes","No","Yes","No",48.5,6,25.6,1919
+"9",1189,"2011","male","complete","can read",3,1,2,0,"No","No",0,0,0,0,"No","No","No","No",57.5,6,25.6,1919
+"10",1190,"2011","female","complete","can read",3,1,1,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",48.5,6,25.6,1919
+"11",1191,"2011","female","complete","can read",3,2,1,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",44.5,6,25.6,1919
+"12",1192,"2011","male","never at","can sign",5,1,1,0,"No","No",0,0,0,0,"No","No","Yes","No",62.5,6,25.6,1919
+"13",1193,"2011","male","complete","can read",4,1,1,0,"No","No",0,0,0,0,"No","No","Yes","No",86,6,25.6,1919
+"14",1194,"2011","male","complete","can read",7,1,4,0.0666667,"No","No",0,0,0,0,"Yes","No","Yes","No",76,6,25.6,1920
+"15",1195,"2011","female","never at","cannot r",1,0,0,NA,"No","No",0,0,0,0,"No","No","No","No",40.5,6,25.6,1920
+"16",1196,"2011","male","never at","can sign",2,0,0,-0.0666667,"No","No",0,0,0,0,"No","No","No","No",32.5,6,25.6,1919
+"17",1197,"2011","male","complete","can read",2,0,0,0,"No","Yes",0,0,0,0,"No","No","Yes","No",55.5,6,25.6,1919
+"18",1198,"2011","female","complete","can read",2,1,1,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",70.5,6,25.6,1918
+"19",1199,"2011","male","never at","can sign",4,2,2,0.1,"No","No",0,0,0,0,"No","No","No","No",45.5,6,25.6,1920
+"20",1200,"2011","male","never at","cannot r",4,2,2,-0.1,"No","No",0,0,0,0,"Yes","No","No","No",42,6,25.6,1920
+"21",1201,"2011","male","complete","can read",2,0,0,0.1333334,"No","No",0,0,0,0,"No","No","Yes","No",84.5,6,25.7,1968
+"22",1202,"2011","male","never at","cannot r",4,2,2,0,"No","No",0,0,0,0,"Yes","No","Yes","No",61,6,25.7,1968
+"23",1203,"2011","male","complete","can read",4,0,3,0.2666667,"Yes","No",0,0,0,0,"Yes","No","Yes","No",86,6,25.7,1967
+"24",1204,"2011","male","never at","cannot r",4,0,2,0,"Yes","No",0,0,0,0,"No","No","No","No",79.5,6,25.7,1967
+"25",1205,"2011","male","never at","cannot r",5,3,2,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",50,6,25.7,1968
+"26",1206,"2011","male","never at","cannot r",3,0,1,0.2,"No","No",0,0,0,0,"Yes","No","Yes","No",60.5,6,25.7,1968
+"27",1207,"2011","male","never at","cannot r",4,0,3,0.1666667,"No","No",0,0,0,0,"No","No","Yes","No",37.5,6,25.7,1967
+"28",1208,"2011","male","never at","can sign",5,2,1,0.2,"Yes","No",0,0,0,0,"No","No","Yes","No",76,6,25.7,1968
+"29",1209,"2011","male","complete","can read",4,2,0,0,"No","No",0,0,0,0,"No","No","Yes","No",72,6,25.7,1968
+"30",1210,"2011","male","complete","can read",4,2,2,0.1666667,"Yes","No",0,0,0,0,"Yes","No","Yes","No",93,6,25.7,1968
+"31",1211,"2011","male","never at","can sign",5,2,2,-0.1,"No","No",0,0,0,0,"No","No","Yes","No",52.5,6,25.7,1969
+"32",1212,"2011","male","never at","can sign",3,1,0,-0.0666667,"No","No",0,0,0,0,"Yes","No","Yes","No",45,6,25.7,1969
+"33",1213,"2011","male","complete","can read",4,1,1,0,"No","No",0,0,0,0,"No","No","Yes","No",36.5,6,25.7,1969
+"34",1214,"2011","male","complete","can read",4,2,2,0.2,"No","No",0,0,0,0,"Yes","No","Yes","No",82.5,6,25.7,1968
+"35",1215,"2011","male","never at","cannot r",3,1,0,0.2,"No","No",0,0,0,0,"No","No","No","No",57.5,6,25.7,1968
+"36",1216,"2011","female","never at","cannot r",4,2,1,NA,"No","No",0,0,0,0,"Yes","No","No","No",65,6,25.7,1970
+"37",1217,"2011","male","reads in","can sign",3,1,0,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",63.5,6,25.7,1970
+"38",1218,"2011","female","never at","cannot r",1,0,0,NA,"No","No",0,0,0,0,"No","No","No","No",28.5,5,25.7,1970
+"39",1219,"2011","female","never at","can sign",1,0,0,NA,"No","No",0,0,0,0,"No","No","No","No",29.5,5,25.7,1970
+"40",1220,"2011","male","never at","cannot r",2,0,1,NA,"No","No",0,0,0,0,"No","No","Yes","No",47.5,6,25.7,1969
+"41",1221,"2011","male","complete","can read",6,3,2,0.0666667,"No","No",0,0,0,0,"Yes","Yes","Yes","No",65.5,6,25.6,1905
+"42",1222,"2011","male","complete","can read",3,1,0,0,"No","No",0,0,0,0,"No","No","Yes","No",60,6,25.6,1905
+"43",1223,"2011","female","complete","can read",2,0,1,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",67.5,6,25.6,1905
+"44",1224,"2011","male","never at","cannot r",3,0,1,-0.1,"No","Yes",0,0,0,0,"Yes","No","Yes","No",84,6,25.6,1906
+"45",1225,"2011","female","never at","cannot r",4,1,1,NA,"No","No",0,0,0,0,"Yes","Yes","Yes","No",74,6,25.6,1906
+"46",1226,"2011","male","complete","can read",5,3,1,0.2,"No","No",0,0,0,0,"Yes","No","Yes","No",60,6,25.6,1906
+"47",1227,"2011","male","never at","can sign",2,0,0,0,"No","No",0,0,0,0,"Yes","No","Yes","No",87,6,25.6,1906
+"48",1228,"2011","female","complete","can read",3,1,2,NA,"No","No",0,0,0,0,"No","No","Yes","No",60,6,25.6,1906
+"49",1229,"2011","female","complete","can read",3,1,1,NA,"No","No",0,0,0,0,"No","No","Yes","No",90,6,25.6,1906
+"50",1230,"2011","female","complete","can read",2,1,1,NA,"No","No",0,0,0,0,"No","No","Yes","No",54.5,6,25.6,1905
+"51",1231,"2011","female","never at","cannot r",1,0,0,NA,"No","No",0,0,0,0,"No","No","No","No",36,6,25.6,1905
+"52",1232,"2011","female","complete","can sign",3,2,1,NA,"No","No",0,0,0,0,"No","No","Yes","No",58.5,6,25.6,1906
+"53",1233,"2011","female","complete","can read",3,2,1,NA,"No","No",0,0,0,0,"No","No","Yes","No",87,6,25.6,1906
+"54",1234,"2011","female","complete","can read",3,2,1,NA,"No","No",0,0,0,0,"No","No","Yes","No",88.5,6,25.6,1905
+"55",1235,"2011","female","never at","cannot r",2,1,0,NA,"No","No",0,0,0,0,"No","No","No","No",53.5,6,25.6,1905
+"56",1236,"2011","male","complete","can read",3,0,1,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",76,6,25.6,1905
+"57",1237,"2011","male","complete","can read",3,0,1,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",79,6,25.6,1905
+"58",1238,"2011","male","never at","can sign",7,0,5,0.3333334,"No","No",0,0,0,0,"Yes","No","Yes","No",67,6,25.6,1904
+"59",1239,"2011","male","never at","cannot r",2,0,0,0,"No","No",0,0,0,0,"No","No","No","No",44,6,25.6,1906
+"60",1240,"2011","male","complete","can read",9,3,4,0.1,"No","Yes",0,0,0,0,"No","Yes","Yes","No",93,6,25.6,1906
+"61",1181,"2015","male","complete","can read",6,2,3,-0.2,NA,"Yes",10,3,1,1,"Yes",NA,"Yes",NA,89,6,25.6,1919
+"62",1182,"2015","female","complete","cannot r",2,0,1,NA,NA,NA,0,0,0,0,"Yes",NA,"Yes",NA,60.5,6,25.6,1919
+"63",1183,"2015","male","never at","cannot r",5,1,2,0.0666667,NA,NA,7,5,0,3,"Yes",NA,"Yes",NA,85.5,6,25.6,1920
+"64",1184,"2015","male","never at","can sign",4,1,2,-0.1666667,NA,NA,4,3,0,4,NA,"No","Yes",NA,86,6,25.6,1920
+"65",1185,"2015","male","never at","can sign",3,1,1,0,NA,NA,0,4,0,0,NA,NA,"Yes",NA,97.5,6,25.6,1920
+"66",1186,"2015","male","complete","can read",6,2,2,0,NA,"Yes",0,2,1,0,NA,NA,"Yes",NA,67.5,6,25.6,1920
+"67",1187,"2015","female","never at","can sign",3,1,1,NA,NA,NA,2,0,0,0,"Yes",NA,"Yes",NA,58.5,6,25.6,1919
+"68",1188,"2015","male","complete","can read",7,0,4,-0.0666667,NA,NA,26,0,0,0,"Yes",NA,"Yes",NA,57.5,6,25.6,1919
+"69",1189,"2015","male","complete","can read",4,2,2,-0.0333334,NA,NA,1,0,0,0,NA,NA,"Yes",NA,80.5,6,25.6,1919
+"70",1190,"2015",NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,NA,NA,25.6,1919
+"71",1191,"2015","female","complete","can read",3,2,1,NA,NA,NA,2,0,0,0,"Yes",NA,"Yes",NA,57,6,25.6,1919
+"72",1192,"2015","male","never at","can sign",7,2,1,-0.1333334,NA,NA,1,0,1,0,"Yes",NA,"Yes",NA,84,6,25.6,1919
+"73",1193,"2015",NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,NA,NA,25.6,1919
+"74",1194,"2015","male","complete","can read",8,2,2,-0.0666667,NA,NA,10,2,0,0,"Yes",NA,"Yes",NA,55.5,6,25.6,1920
+"75",1195,"2015","female","never at","can sign",1,0,0,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,58,6,25.6,1920
+"76",1196,"2015","male","complete","can sign",2,0,0,0,NA,NA,3,2,0,0,NA,NA,NA,NA,59.5,6,25.6,1919
+"77",1197,"2015","male","complete","can read",4,1,1,0.1666667,NA,"Yes",16,0,1,0,"Yes",NA,"Yes",NA,60,6,25.6,1919
+"78",1198,"2015","female","complete","can read",2,1,0,NA,NA,NA,0,0,1,0,"Yes",NA,"Yes",NA,62.5,6,25.6,1918
+"79",1199,"2015","male","complete","can sign",5,2,2,0,NA,NA,0,2,0,1,NA,NA,"Yes",NA,86,6,25.6,1920
+"80",1200,"2015","male","never at","can sign",4,2,2,-0.1,NA,NA,12,4,0,0,"Yes",NA,"Yes",NA,89,6,25.6,1920
+"81",1201,"2015","male","complete","can read",2,0,0,-0.1,NA,NA,14,2,0,0,"Yes",NA,"Yes",NA,77.5,6,25.7,1968
+"82",1202,"2015","male","never at","cannot r",5,1,1,-0.1,NA,NA,4,1,1,0,"Yes",NA,"Yes",NA,68.5,6,25.7,1968
+"83",1203,"2015","male","complete","can read",6,1,4,0.0333334,"Yes",NA,0,5,0,5,"Yes",NA,"Yes",NA,83,6,25.7,1967
+"84",1204,"2015","male","never at","cannot r",4,0,1,0.2333334,"Yes",NA,0,1,0,4,NA,NA,"Yes",NA,66.5,6,25.7,1967
+"85",1205,"2015","male","never at","can sign",5,3,2,-0.2,NA,NA,0,1,0,2,"Yes",NA,"Yes",NA,80,6,25.7,1968
+"86",1206,"2015","male","never at","cannot r",4,1,1,-0.1,NA,NA,5,2,0,0,"Yes",NA,"Yes",NA,61.5,6,25.7,1968
+"87",1207,"2015","male","never at","can sign",4,0,3,-0.1,NA,NA,0,3,0,0,NA,NA,"Yes",NA,77.5,6,25.7,1967
+"88",1208,"2015","male","never at","cannot r",7,3,2,-0.1,NA,"Yes",0,4,0,0,NA,NA,"Yes",NA,81,6,25.7,1968
+"89",1209,"2015","male","complete","can read",4,2,0,-0.0333334,NA,NA,0,2,0,4,NA,NA,"Yes",NA,61.5,6,25.7,1968
+"90",1210,"2015","male","complete","can read",4,2,1,0.1333334,NA,NA,4,0,0,0,"Yes",NA,"Yes",NA,66,6,25.7,1968
+"91",1211,"2015","male","never at","can sign",5,2,1,0.2,NA,NA,0,0,0,0,NA,NA,"Yes",NA,81,6,25.7,1969
+"92",1212,"2015","male","complete","can sign",3,0,0,-0.0666667,NA,NA,0,0,0,0,NA,NA,NA,NA,55,6,25.7,1969
+"93",1213,"2015","male","complete","can read",5,2,0,-0.2,NA,NA,7,0,0,1,NA,NA,"Yes",NA,87.5,6,25.7,1969
+"94",1214,"2015","male","complete","can sign",5,2,2,0.1,NA,NA,0,2,0,0,"Yes",NA,"Yes",NA,93,6,25.7,1968
+"95",1215,"2015","male","never at","cannot r",4,1,1,0.2333334,"No",NA,0,0,0,0,NA,NA,"Yes",NA,84,6,25.7,1968
+"96",1216,"2015","female","never at","cannot r",8,5,1,NA,NA,NA,5,1,1,3,"Yes",NA,"Yes",NA,96,6,25.7,1970
+"97",1217,"2015","male","never at","cannot r",3,1,0,0,NA,NA,6,2,0,0,"Yes",NA,"Yes",NA,79,6,25.7,1970
+"98",1218,"2015","female","never at","cannot r",1,0,0,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,24.5,5,25.7,1970
+"99",1219,"2015","female","never at","cannot r",1,0,0,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,18,4,25.7,1970
+"100",1220,"2015","male","never at","cannot r",5,1,3,0,NA,NA,0,1,0,0,"Yes",NA,"Yes",NA,59.5,6,25.7,1969
+"101",1221,"2015","male","complete","can read",6,2,3,-0.1,NA,NA,0,1,0,0,"Yes","No","Yes",NA,77,6,25.6,1905
+"102",1222,"2015","male","complete","can read",3,0,0,0,NA,NA,0,0,1,0,NA,NA,"Yes",NA,80,6,25.6,1905
+"103",1223,"2015","female","complete","can read",3,1,0,NA,NA,NA,1,0,1,0,"Yes",NA,"Yes",NA,101,6,25.6,1905
+"104",1224,"2015","male","never at","cannot r",4,0,2,0,NA,"Yes",0,1,0,0,NA,NA,"Yes",NA,57,6,25.6,1906
+"105",1225,"2015","female","never at","cannot r",4,0,1,NA,NA,NA,4,0,0,0,"Yes","No","Yes",NA,70,6,25.6,1906
+"106",1226,"2015","male","complete","can read",5,1,2,-0.1,NA,NA,4,0,1,0,"Yes",NA,"Yes",NA,97,6,25.6,1906
+"107",1227,"2015","male","never at","can sign",3,0,1,-0.1,NA,NA,1,3,1,0,"Yes",NA,"Yes",NA,50.5,6,25.6,1906
+"108",1228,"2015","female","complete","can read",3,1,0,NA,NA,NA,1,0,0,0,NA,NA,"Yes",NA,69,6,25.6,1906
+"109",1229,"2015","female","complete","can read",3,1,0,NA,NA,NA,2,0,0,0,"Yes",NA,"Yes",NA,88.5,6,25.6,1906
+"110",1230,"2015","female","complete","can read",2,1,1,NA,NA,NA,0,0,0,0,"Yes",NA,"Yes",NA,84,6,25.6,1905
+"111",1231,"2015",NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,NA,NA,25.6,1905
+"112",1232,"2015","female","complete","can sign",3,1,1,NA,NA,NA,0,0,0,0,NA,NA,"Yes",NA,58.5,6,25.6,1906
+"113",1233,"2015","female","complete","can read",4,2,1,NA,NA,NA,33,0,1,0,"Yes",NA,"Yes",NA,112,6,25.6,1906
+"114",1234,"2015","female","complete","can read",3,2,1,NA,NA,NA,6,0,0,0,"Yes",NA,"Yes",NA,91.5,6,25.6,1905
+"115",1235,"2015","female","never at","cannot r",2,0,0,NA,NA,NA,5,0,0,0,NA,NA,NA,NA,60,6,25.6,1905
+"116",1236,"2015","male","complete","can read",7,0,5,0.3333334,NA,NA,0,0,1,0,"Yes",NA,"Yes",NA,95,6,25.6,1905
+"117",1237,"2015","male","complete","can read",5,1,2,NA,NA,NA,1,0,1,0,"Yes",NA,"Yes",NA,49.5,6,25.6,1905
+"118",1238,"2015","male","never at","can sign",9,2,5,-0.0333334,NA,NA,6,0,0,0,"Yes",NA,"Yes",NA,93,6,25.6,1904
+"119",1239,"2015","male","never at","cannot r",5,1,2,-0.1333334,NA,NA,4,2,0,0,NA,NA,"Yes",NA,93,6,25.6,1906
+"120",1240,"2015","male","complete","can read",11,5,3,-0.0666667,NA,"No",1,3,0,0,"Yes","No","Yes",NA,50.5,6,25.6,1906
+"121",1601,"2011","female","complete","can read",2,0,1,NA,"No","No",0,0,0,0,"No","No","Yes","No",66.5,6,25.7,1973
+"122",1602,"2011","male","complete","can read",3,0,1,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",56.5,6,25.7,1973
+"123",1603,"2011","male","complete","can read",4,1,2,NA,"No","No",0,0,0,0,"No","No","Yes","No",68.5,6,25.7,1973
+"124",1604,"2011","male","complete","can read",4,0,2,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",69,6,25.7,1973
+"125",1605,"2011","male","complete","can read",4,2,1,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",42.5,6,25.7,1979
+"126",1606,"2011","male","complete","can read",3,0,2,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",61,6,25.7,1973
+"127",1607,"2011","male","complete","can read",3,1,2,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",72,6,25.7,1973
+"128",1608,"2011","male","complete","can sign",4,0,2,NA,"No","No",0,0,0,0,"Yes","No","Yes","Yes",65,6,25.7,1973
+"129",1609,"2011","male","complete","can read",5,2,2,0.1666667,"No","No",0,0,0,0,"No","No","Yes","No",100,6,25.7,1973
+"130",1610,"2011","male","complete","can read",5,2,2,-0.1,"No","No",0,0,0,0,"Yes","No","Yes","No",60,6,25.7,1973
+"131",1611,"2011","female","never at","can sign",4,3,1,NA,"No","No",0,0,0,0,"Yes","No","No","No",31.5,6,25.7,1973
+"132",1612,"2011","male","complete","can read",5,0,3,NA,"No","No",0,0,0,0,"No","No","Yes","No",77,6,25.7,1973
+"133",1613,"2011","male","complete","can read",7,2,4,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",78,6,25.7,1973
+"134",1614,"2011","male","complete","can read",4,1,1,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",88.5,6,25.7,1973
+"135",1615,"2011","male","complete","can read",3,0,2,NA,"No","No",0,0,0,0,"No","No","No","No",62.5,6,25.7,1973
+"136",1616,"2011","male","never at","can sign",2,0,1,NA,"No","No",0,0,0,0,"Yes","Yes","No","No",55,6,25.7,1973
+"137",1617,"2011","female","complete","can read",4,1,2,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",78,6,25.7,1972
+"138",1618,"2011","male","complete","can read",5,2,2,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",60,6,25.7,1973
+"139",1619,"2011","male","never at","can sign",3,0,1,0.1,"No","No",0,0,0,0,"Yes","No","Yes","No",51.5,6,25.7,1973
+"140",1620,"2011","male","complete","can read",3,1,2,NA,"No","Yes",0,0,0,0,"No","No","Yes","No",78,6,25.7,1973
+"141",1621,"2011","male","complete","can read",3,1,2,NA,"No","No",0,0,0,0,"No","No","Yes","No",61,6,25.7,2072
+"142",1622,"2011","male","complete","can read",4,2,0,0.3333334,"No","No",0,0,0,0,"No","No","Yes","No",65.5,6,25.7,2068
+"143",1623,"2011","male","never at","can sign",4,0,2,0,"No","No",0,0,0,0,"Yes","No","No","No",81.5,6,25.7,2071
+"144",1624,"2011","female","complete","can read",3,2,1,NA,"No","No",0,0,0,0,"No","No","Yes","No",42.5,6,25.7,2071
+"145",1625,"2011","male","never at","can sign",6,2,3,0.4333334,"No","No",0,0,0,0,"No","No","Yes","No",52.5,6,25.7,2070
+"146",1626,"2011","male","complete","can read",2,0,2,0.1,"No","No",0,0,0,0,"Yes","No","Yes","No",39.5,6,25.7,2071
+"147",1627,"2011","female","complete","can read",2,1,1,NA,"No","No",0,0,0,0,"No","No","Yes","No",54,6,25.7,2070
+"148",1628,"2011","male","complete","can read",5,3,2,0.1333334,"No","No",0,0,0,0,"No","No","No","No",46.5,6,25.7,2071
+"149",1629,"2011","male","never at","cannot r",2,0,0,0.2333334,"No","No",0,0,0,0,"No","No","Yes","No",32.5,6,25.7,2069
+"150",1630,"2011","female","complete","can read",2,0,2,NA,"No","No",0,0,0,0,"No","No","Yes","No",48.5,6,25.7,2069
+"151",1631,"2011","female","complete","can read",4,3,1,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",61,6,25.8,2068
+"152",1632,"2011","male","never at","can sign",5,3,2,0,"No","No",0,0,0,0,"No","No","Yes","No",52.5,6,25.7,2071
+"153",1633,"2011","female","never at","can sign",2,0,1,NA,"No","No",0,0,0,0,"No","No","Yes","No",28.5,6,25.7,2071
+"154",1634,"2011","female","never at","can sign",3,0,2,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",58.5,6,25.8,2070
+"155",1635,"2011","male","complete","can read",3,1,1,0.5333334,"Yes","No",0,0,0,0,"No","Yes","Yes","No",64,6,25.7,2072
+"156",1636,"2011","male","never at","can sign",4,1,3,0.3666667,"No","No",0,0,0,0,"No","No","Yes","No",38.5,6,25.8,2070
+"157",1637,"2011","male","never at","can sign",2,0,0,0.3333334,"Yes","No",0,0,0,0,"Yes","No","Yes","No",69.5,6,25.7,2072
+"158",1638,"2011","male","complete","can read",2,0,0,0.0666667,"No","No",0,0,0,0,"No","No","Yes","No",84.5,6,25.8,2070
+"159",1639,"2011","male","ba/bsc p","can read",4,2,2,0.0333334,"No","No",0,0,0,0,"Yes","No","Yes","No",55.5,6,25.7,2072
+"160",1640,"2011","male","never at","can sign",5,1,2,0.1333334,"Yes","No",0,0,0,0,"Yes","No","Yes","No",82,6,25.7,2072
+"161",1641,"2011","male","complete","can read",5,2,2,0.3666667,"No","No",0,0,0,0,"Yes","No","Yes","No",44.5,6,25.6,2115
+"162",1642,"2011","male","complete","can read",4,2,2,0.4,"No","No",0,0,0,0,"Yes","No","Yes","No",74,6,25.6,2115
+"163",1643,"2011","male","complete","can sign",4,2,2,0.1,"No","No",0,0,0,0,"Yes","No","Yes","No",34.5,6,25.6,2116
+"164",1644,"2011","male","never at","cannot r",4,2,0,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",45,6,25.6,2116
+"165",1645,"2011","female","never at","cannot r",2,0,1,NA,"No","No",0,0,0,0,"No","No","No","No",28.5,4,25.6,2117
+"166",1646,"2011","male","complete","can read",3,1,2,0.2,"No","No",0,0,0,0,"Yes","No","Yes","No",61.5,6,25.6,2116
+"167",1647,"2011","male","never at","can sign",2,0,0,0.3333334,"No","No",0,0,0,0,"No","No","No","No",84,6,25.6,2116
+"168",1648,"2011","male","complete","can read",4,1,3,0.2,"No","No",0,0,0,0,"Yes","No","Yes","No",95,6,25.6,2115
+"169",1649,"2011","male","complete","can read",6,2,2,NA,"No","No",0,0,0,0,"No","No","Yes","No",69.5,6,25.6,2116
+"170",1650,"2011","male","complete","can read",4,2,2,0.3666667,"No","No",0,0,0,0,"Yes","No","Yes","No",59.5,6,25.6,2116
+"171",1651,"2011","male","complete","can read",4,2,2,NA,"No","No",0,0,0,0,"No","No","Yes","No",60.5,6,25.6,2116
+"172",1652,"2011","male","complete","can read",5,1,2,0.5000001,"No","No",0,0,0,0,"Yes","No","Yes","No",90,6,25.6,2116
+"173",1653,"2011","male","complete","can read",3,1,2,0.2,"No","No",0,0,0,0,"No","No","Yes","No",50.5,6,25.6,2116
+"174",1654,"2011","male","never at","can sign",4,2,1,0.1666667,"Yes","No",0,0,0,0,"No","No","Yes","No",37.5,6,25.6,2116
+"175",1655,"2011","male","never at","cannot r",2,0,0,0.3333334,"Yes","No",0,0,0,0,"No","No","No","No",36.5,6,25.6,2115
+"176",1656,"2011","male","never at","cannot r",2,0,0,0,"No","No",0,0,0,0,"No","No","No","No",32.5,6,25.6,2115
+"177",1657,"2011","male","complete","can read",3,1,2,0.3000001,"No","No",0,0,0,0,"No","No","Yes","No",38.5,6,25.6,2114
+"178",1658,"2011","male","never at","can sign",3,1,0,0.1,"No","No",0,0,0,0,"No","No","Yes","No",40.5,6,25.6,2114
+"179",1659,"2011","female","complete","can read",3,2,1,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",64.5,6,25.6,2115
+"180",1660,"2011","female","complete","can read",6,4,2,NA,"No","No",0,0,0,0,"No","No","Yes","No",61.5,6,25.6,2115
+"181",1661,"2011","male","complete","can read",3,0,2,0.2666667,"No","No",0,0,0,0,"No","No","No","No",58.5,6,25.6,2105
+"182",1662,"2011","male","complete","can read",3,0,0,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",70.5,6,25.6,2105
+"183",1663,"2011","male","complete","can read",6,0,4,NA,"No","Yes",0,0,0,0,"No","No","Yes","No",62.5,6,25.5,2106
+"184",1664,"2011","female","never at","can sign",2,1,0,NA,"No","No",0,0,0,0,"No","No","Yes","No",64.5,6,25.5,2106
+"185",1665,"2011","female","never at","cannot r",1,0,0,NA,"No","No",0,0,0,0,"No","No","Yes","No",74.5,6,25.6,2105
+"186",1666,"2011","male","complete","can read",3,1,2,NA,"No","Yes",0,0,0,0,"Yes","No","Yes","No",69.5,6,25.5,2106
+"187",1667,"2011","male","complete","can read",4,1,2,NA,"No","No",0,0,0,0,"No","No","No","No",63.5,6,25.5,2107
+"188",1668,"2011","male","complete","can sign",6,2,2,0.2666668,"No","No",0,0,0,0,"Yes","Yes","Yes","No",76.5,6,25.5,2107
+"189",1669,"2011","male","complete","can read",5,1,3,0.1333333,"No","No",0,0,0,0,"No","No","Yes","No",72,6,25.5,2107
+"190",1670,"2011","female","complete","can read",3,2,1,NA,"No","No",0,0,0,0,"No","No","Yes","No",99,6,25.5,2108
+"191",1671,"2011","male","complete","can read",4,2,2,0.1,"No","No",0,0,0,0,"Yes","No","Yes","No",78,6,25.5,2108
+"192",1672,"2011","male","ma/msc a","can read",5,2,2,0.3000001,"No","No",0,0,0,0,"Yes","No","Yes","No",59,6,25.5,2107
+"193",1673,"2011","male","complete","can read",5,0,3,-0.1666667,"No","No",0,0,0,0,"No","No","Yes","No",62.5,6,25.5,2108
+"194",1674,"2011","male","never at","can sign",3,1,1,0.0666667,"No","No",0,0,0,0,"Yes","No","Yes","No",47.5,6,25.5,2108
+"195",1675,"2011","male","never at","cannot r",4,0,3,-0.1,"No","No",0,0,0,0,"Yes","No","Yes","No",59.5,6,25.5,2108
+"196",1676,"2011","male","never at","cannot r",2,0,0,-0.1,"No","No",0,0,0,0,"No","Yes","Yes","No",58.5,6,25.5,2108
+"197",1677,"2011","male","complete","can read",6,3,2,0.3666667,"No","No",0,0,0,0,"Yes","No","Yes","No",63.5,6,25.5,2108
+"198",1678,"2011","male","complete","can read",2,0,2,0.3666667,"No","No",0,0,0,0,"No","No","Yes","No",45.5,6,25.5,2107
+"199",1679,"2011","male","complete","can sign",5,0,2,0.3333334,"No","No",0,0,0,0,"Yes","No","Yes","No",70,6,NA,NA
+"200",1680,"2011","male","complete","can sign",4,2,2,0.2,"No","No",0,0,0,0,"No","No","Yes","No",65.5,6,25.5,2107
+"201",1601,"2015","female","complete","can read",2,0,0,NA,NA,NA,0,0,3,0,NA,NA,"Yes",NA,50,6,25.7,1973
+"202",1602,"2015","male","complete","can read",3,0,0,0,NA,NA,0,0,0,0,"Yes",NA,"Yes",NA,80,6,25.7,1973
+"203",1603,"2015","male","complete","can read",4,1,2,0.2,NA,NA,0,0,0,0,NA,NA,"Yes",NA,82,6,25.7,1973
+"204",1604,"2015","male","complete","can read",5,1,2,0.4000001,NA,NA,0,0,6,0,"Yes",NA,"Yes",NA,90,6,25.7,1973
+"205",1605,"2015","male","complete","can read",12,3,6,NA,NA,NA,0,0,1,0,"Yes",NA,"Yes",NA,104,6,25.7,1979
+"206",1606,"2015","male","complete","can read",3,0,1,-0.0333333,NA,NA,0,0,0,0,NA,NA,"Yes",NA,60,6,25.7,1973
+"207",1607,"2015","male","complete","can read",3,1,2,0,NA,NA,0,0,0,0,"Yes",NA,"Yes",NA,43,6,25.7,1973
+"208",1608,"2015","male","complete","can sign",5,1,2,-0.1333334,NA,NA,11,4,1,0,"Yes",NA,"Yes","No",88.5,6,25.7,1973
+"209",1609,"2015","male","complete","can read",6,3,1,-0.1,NA,NA,0,2,1,0,"Yes",NA,"Yes",NA,100.5,6,25.7,1973
+"210",1610,"2015","male","complete","can read",5,2,2,0.0666667,NA,NA,9,1,1,0,"Yes",NA,"Yes",NA,74.5,6,25.7,1973
+"211",1611,"2015","female","never at","can sign",4,3,1,NA,NA,NA,0,0,0,0,"Yes",NA,"Yes",NA,72,6,25.7,1973
+"212",1612,"2015","male","complete","can read",7,2,2,0.4333334,NA,NA,0,0,0,0,"Yes",NA,"Yes",NA,91,6,25.7,1973
+"213",1613,"2015","male","complete","can read",7,2,2,0.1333334,NA,NA,0,0,0,0,"Yes",NA,"Yes",NA,94,6,25.7,1973
+"214",1614,"2015",NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,NA,6,25.7,1973
+"215",1615,"2015","male","complete","can read",4,1,2,0.0666667,NA,NA,0,0,0,0,NA,NA,"Yes",NA,97,6,25.7,1973
+"216",1616,"2015","male","never at","can sign",3,0,1,0.3333334,NA,NA,0,0,0,0,NA,"No","Yes",NA,74,6,25.7,1973
+"217",1617,"2015","female","complete","can read",6,1,4,NA,NA,NA,0,0,2,0,"Yes",NA,"Yes",NA,55.5,6,25.7,1972
+"218",1618,"2015","female","complete","can read",5,2,1,NA,NA,NA,0,0,1,0,"Yes",NA,"Yes",NA,66.5,6,25.7,1973
+"219",1619,"2015","male","never at","can sign",5,1,2,-0.1,NA,NA,0,0,1,0,"Yes",NA,"Yes",NA,85,6,25.7,1973
+"220",1620,"2015","male","complete","can read",3,1,2,-0.3666667,NA,"No",0,0,1,0,"Yes",NA,"Yes",NA,71,6,25.7,1973
+"221",1621,"2015","male","complete","can read",4,2,2,0.0666667,NA,NA,0,0,0,0,NA,NA,"Yes",NA,92,6,25.7,2072
+"222",1622,"2015","male","complete","can read",6,2,2,-0.1,NA,NA,0,2,1,0,"Yes",NA,"Yes",NA,93.5,6,25.7,2068
+"223",1623,"2015","male","complete","can sign",4,0,0,-0.1,NA,NA,15,2,1,0,"Yes",NA,NA,NA,46.5,6,25.7,2071
+"224",1624,"2015","female","complete","can read",4,2,2,NA,NA,NA,1,0,0,0,NA,NA,"Yes",NA,64.5,6,25.7,2071
+"225",1625,"2015","male","never at","can sign",6,2,2,-0.0333334,NA,NA,19,2,0,0,NA,NA,"Yes",NA,86.5,6,25.7,2070
+"226",1626,"2015","male","complete","can read",2,0,2,0.1666667,NA,NA,4,2,0,0,"Yes",NA,"Yes",NA,68.5,6,25.7,2071
+"227",1627,"2015","female","complete","can read",3,1,2,NA,NA,NA,2,1,1,0,"Yes",NA,"Yes",NA,78.5,6,25.7,2070
+"228",1628,"2015","male","complete","can read",6,4,2,-0.1333334,NA,NA,1,0,0,0,NA,NA,"Yes",NA,44.5,6,25.7,2071
+"229",1629,"2015","male","complete","can read",3,0,1,NA,NA,NA,15,4,1,0,NA,NA,"Yes",NA,90,6,25.7,2069
+"230",1630,"2015","male","complete","can read",5,0,2,NA,NA,"Yes",0,0,3,0,"Yes",NA,"Yes",NA,67.5,6,25.7,2069
+"231",1631,"2015","female","complete","can read",4,1,3,NA,NA,NA,0,0,1,0,"Yes",NA,"Yes",NA,95,6,25.8,2068
+"232",1632,"2015","male","never at","can sign",5,3,2,-0.2333334,NA,NA,0,0,1,0,"Yes",NA,"Yes",NA,50.5,6,25.7,2071
+"233",1633,"2015","female","never at","can sign",4,1,1,NA,NA,NA,10,1,1,0,"Yes",NA,"Yes",NA,61.5,6,25.7,2071
+"234",1634,"2015","male","complete","can read",3,0,2,NA,NA,NA,0,1,0,1,NA,NA,"Yes",NA,59.5,6,25.8,2070
+"235",1635,"2015","male","complete","can read",4,2,1,-0.0333334,"No",NA,2,2,0,0,NA,"No","Yes",NA,78,6,25.7,2072
+"236",1636,"2015","male","never at","can sign",5,2,3,0.1,NA,NA,11,1,0,0,NA,NA,"Yes",NA,57,6,25.8,2070
+"237",1637,"2015","male","never at","can sign",2,0,0,0.1666667,"No",NA,0,2,1,0,NA,NA,"Yes",NA,83.5,6,25.7,2072
+"238",1638,"2015","male","complete","can read",6,2,2,0.2333334,NA,NA,15,0,0,0,NA,NA,"Yes",NA,87,6,25.8,2070
+"239",1639,"2015","male","ba/bsc p","can read",4,2,2,0.3333334,NA,NA,1,2,1,0,"Yes",NA,"Yes",NA,82,6,25.7,2072
+"240",1640,"2015","male","never at","can sign",6,2,2,0.0666667,"Yes",NA,8,6,0,0,"Yes",NA,"Yes",NA,71,6,25.7,2072
+"241",1641,"2015","male","complete","can read",5,2,2,-0.2,NA,NA,11,3,1,3,"Yes",NA,"Yes",NA,98,6,25.6,2115
+"242",1642,"2015","male","complete","can read",4,2,1,-0.1,NA,NA,2,4,0,0,NA,NA,"Yes",NA,91.5,6,25.6,2115
+"243",1643,"2015","male","complete","can sign",4,2,2,-0.1,NA,NA,3,1,1,0,"Yes",NA,"Yes",NA,89,6,25.6,2116
+"244",1644,"2015","male","never at","cannot r",4,1,1,0.2,NA,NA,0,0,0,0,"Yes",NA,"Yes",NA,50,5,25.6,2116
+"245",1645,"2015","male","never at","can sign",3,0,2,NA,NA,NA,1,1,0,0,"Yes",NA,"Yes",NA,38.5,6,25.6,2117
+"246",1646,"2015","male","complete","can read",3,1,2,-0.1,NA,NA,11,0,1,0,"Yes",NA,"Yes",NA,72.5,6,25.6,2116
+"247",1647,"2015","male","never at","can sign",2,0,0,-0.3000001,NA,NA,14,1,1,0,NA,NA,NA,NA,100.5,6,25.6,2116
+"248",1648,"2015","male","complete","can read",4,0,3,-0.1,NA,NA,14,1,1,0,"Yes",NA,"Yes",NA,80.5,6,25.6,2115
+"249",1649,"2015","male","complete","can read",6,1,1,0.1333333,NA,NA,10,0,1,0,"Yes",NA,"Yes",NA,89,6,25.6,2116
+"250",1650,"2015","male","complete","can read",4,2,2,-0.1666667,NA,NA,0,0,0,0,"Yes",NA,"Yes",NA,79.5,6,25.6,2116
+"251",1651,"2015","male","complete","can read",9,2,6,NA,NA,NA,7,0,1,0,"Yes",NA,"Yes",NA,64,6,25.6,2116
+"252",1652,"2015","male","complete","can read",7,1,4,0,NA,"Yes",12,5,1,0,"Yes",NA,"Yes",NA,81.5,6,25.6,2116
+"253",1653,"2015","male","complete","can read",4,2,2,-0.2666667,NA,NA,3,0,0,0,NA,NA,"Yes",NA,99,6,25.6,2116
+"254",1654,"2015","male","complete","can sign",4,1,2,-0.1,"No",NA,10,2,1,0,NA,NA,"Yes",NA,81,6,25.6,2116
+"255",1655,"2015","male","never at","cannot r",6,1,3,NA,"No",NA,13,3,1,0,"Yes",NA,"Yes",NA,94,6,25.6,2115
+"256",1656,"2015","male","never at","can sign",2,0,0,-0.1333334,NA,NA,0,0,0,0,NA,NA,NA,NA,48.5,6,25.6,2115
+"257",1657,"2015","male","never at","cannot r",6,2,2,0.1,NA,"Yes",2,2,1,0,"Yes",NA,"Yes",NA,59.5,6,25.6,2114
+"258",1658,"2015","male","complete","can read",3,1,0,-0.1,NA,NA,1,1,0,0,NA,NA,"Yes",NA,92,6,25.6,2114
+"259",1659,"2015","female","complete","can read",4,2,2,NA,NA,NA,8,3,1,0,"Yes",NA,"Yes",NA,68,6,25.6,2115
+"260",1660,"2015","male","ma/msc a","can read",7,4,1,0,NA,"Yes",9,2,1,0,NA,NA,"Yes",NA,78,6,25.6,2115
+"261",1661,"2015","male","complete","can read",4,1,2,-0.2,NA,NA,1,0,0,0,NA,NA,NA,NA,74.5,6,25.6,2105
+"262",1662,"2015","male","complete","can read",3,0,0,-0.2,NA,NA,6,2,1,0,NA,NA,"Yes",NA,106,6,25.6,2105
+"263",1663,"2015","male","complete","can read",9,2,5,0.4000001,NA,"Yes",0,5,1,4,"Yes",NA,"Yes",NA,98.5,6,25.5,2106
+"264",1664,"2015","female","never at","can sign",3,0,2,NA,NA,NA,2,1,1,2,"Yes",NA,"Yes",NA,95,6,25.5,2106
+"265",1665,"2015","female","never at","cannot r",1,0,0,NA,NA,NA,0,0,0,0,NA,NA,"Yes",NA,66.5,6,25.6,2105
+"266",1666,"2015","male","complete","can read",4,1,3,0.0666667,NA,"Yes",0,3,3,1,"Yes",NA,"Yes",NA,105,6,25.5,2106
+"267",1667,"2015","female","complete","can read",5,2,1,NA,NA,NA,0,0,0,0,NA,NA,"Yes",NA,63,6,25.5,2107
+"268",1668,"2015","male","complete","can read",7,3,2,NA,NA,NA,9,0,1,0,"Yes",NA,"Yes",NA,106,6,25.5,2107
+"269",1669,"2015","male","never at","can sign",6,2,2,-0.1666667,NA,NA,0,0,0,0,"Yes",NA,"Yes",NA,77,6,25.5,2107
+"270",1670,"2015","female","complete","can read",4,2,2,NA,NA,NA,3,0,1,0,"Yes",NA,"Yes",NA,100.5,6,25.5,2108
+"271",1671,"2015","male","complete","can read",4,2,2,-0.1,NA,NA,22,1,0,0,"Yes",NA,NA,NA,87,6,25.5,2108
+"272",1672,"2015","male","ma/msc a","can read",5,1,2,0.2666667,NA,NA,0,0,0,0,"Yes",NA,"Yes",NA,109.5,6,25.5,2107
+"273",1673,"2015","male","complete","can read",6,0,4,-0.1,NA,"Yes",6,0,1,0,"Yes",NA,"Yes",NA,81,6,25.5,2108
+"274",1674,"2015","male","never at","can sign",3,0,1,0,NA,NA,2,0,1,5,"Yes",NA,"Yes",NA,68.5,6,25.5,2108
+"275",1675,"2015","male","never at","cannot r",4,0,1,0.0666667,NA,NA,10,3,1,0,"Yes",NA,"Yes",NA,86.5,6,25.5,2108
+"276",1676,"2015","male","never at","cannot r",2,0,0,-0.1,NA,NA,29,2,1,0,NA,"Yes","Yes",NA,94.5,6,25.5,2108
+"277",1677,"2015","male","complete","can read",6,1,3,0.2333333,NA,NA,0,0,4,0,"Yes",NA,"Yes",NA,75.5,6,25.5,2108
+"278",1678,"2015","male","never at","can sign",7,2,3,NA,NA,NA,3,0,1,0,NA,NA,"Yes",NA,93.5,6,25.5,2107
+"279",1679.1,"2015","male","complete","can read",6,0,2,-0.0333334,NA,NA,14,0,0,0,"Yes",NA,"Yes",NA,58,6,25.5,2107
+"280",1679.2,"2015","male","complete","can read",5,0,1,NA,NA,NA,3,0,0,0,"Yes",NA,"Yes",NA,83.5,6,25.5,2106
+"281",1680,"2015","female","complete","can read",4,2,1,NA,NA,NA,0,0,1,0,"Yes",NA,NA,NA,67,6,25.5,2107
+"282",3881,"2011","male","complete","can read",3,1,2,NA,"No","No",0,0,0,0,"No","No","No","No",52.5,6,25.2,2726
+"283",3882,"2011","male","never at","can sign",6,3,2,0.1666667,"Yes","No",0,0,0,0,"No","No","Yes","No",55.5,6,25.2,2729
+"284",3883,"2011","male","complete","can read",7,4,0,0.1666667,"No","No",0,0,0,0,"No","No","No","No",60,6,25.2,2727
+"285",3884,"2011","male","never at","can sign",5,3,2,0.1,"No","No",0,0,0,0,"No","No","No","No",60.5,5,25.2,2728
+"286",3885,"2011","female","never at","cannot r",5,1,3,NA,"No","No",0,0,0,0,"No","No","Yes","No",31,6,25.2,2727
+"287",3886,"2011","male","never at","can sign",4,1,2,NA,"No","No",0,0,0,0,"No","No","No","No",50,6,25.2,2731
+"288",3887,"2011","male","never at","cannot r",2,0,0,0.2666667,"No","No",0,0,0,0,"No","No","No","No",39.5,6,25.2,2731
+"289",3888,"2011","male","never at","cannot r",8,4,2,-0.1,"No","No",0,0,0,0,"No","No","Yes","No",68,6,25.2,2731
+"290",3889,"2011","male","never at","cannot r",5,2,1,0.1666667,"Yes","No",0,0,0,0,"No","No","No","No",77,6,25.2,2730
+"291",3890,"2011","male","never at","can sign",6,4,2,0.2,"No","No",0,0,0,0,"No","No","Yes","No",36.5,3,25.2,2731
+"292",3891,"2011","male","never at","can sign",7,4,2,0.3666667,"Yes","No",0,0,0,0,"No","No","Yes","No",37.5,6,25.2,2733
+"293",3892,"2011","female","never at","cannot r",2,1,0,NA,"No","No",0,0,0,0,"No","Yes","No","No",31,3,25.2,2738
+"294",3893,"2011","male","complete","can read",3,1,2,0.3666667,"No","No",0,0,0,0,"No","No","Yes","No",52.5,6,25.2,2738
+"295",3894,"2011","male","never at","can sign",7,2,3,NA,"Yes","No",0,0,0,0,"No","No","Yes","No",112,6,25.2,2738
+"296",3895,"2011","male","complete","can read",3,0,1,-0.0666667,"No","No",0,0,0,0,"No","No","No","No",48,6,25.2,2739
+"297",3896,"2011","male","never at","cannot r",7,5,1,-0.1666667,"No","No",0,0,0,0,"No","No","No","No",80.5,6,25.2,2741
+"298",3897,"2011","female","never at","can sign",5,4,1,NA,"No","No",0,0,0,0,"No","No","No","No",36,3,25.2,2740
+"299",3898,"2011","male","never at","can sign",5,0,4,0.2666667,"Yes","No",0,0,0,0,"No","No","Yes","No",60,6,25.2,2737
+"300",3899,"2011","male","never at","can sign",4,1,2,0.2333334,"No","No",0,0,0,0,"No","No","No","No",38.5,4,25.2,2737
+"301",3900,"2011","male","complete","can read",2,0,0,-0.1,"No","No",0,0,0,0,"No","No","No","No",87,6,25.2,2734
+"302",3901,"2011","male","complete","can read",7,3,3,-0.1,"No","No",0,0,0,0,"No","No","Yes","No",46,6,25.2,2732
+"303",3902,"2011","male","complete","can read",3,1,2,-0.0333334,"No","Yes",0,0,0,0,"No","No","Yes","No",86,6,25.2,2730
+"304",3903,"2011","male","never at","cannot r",5,3,2,0,"Yes","No",0,0,0,0,"Yes","No","Yes","No",68.5,6,25.2,2729
+"305",3904,"2011","female","never at","cannot r",3,2,1,NA,"No","No",0,0,0,0,"No","No","No","No",34.5,6,25.2,2730
+"306",3905,"2011","male","never at","cannot r",3,1,2,NA,"Yes","No",0,0,0,0,"No","No","No","No",28.5,6,25.2,2729
+"307",3906,"2011","male","complete","can read",7,2,3,0,"No","Yes",0,0,0,0,"No","No","Yes","No",66,6,25.2,2728
+"308",3907,"2011","male","never at","can sign",3,1,0,0.2,"Yes","No",0,0,0,0,"No","No","Yes","No",55,6,25.2,2728
+"309",3908,"2011","male","reads in","can sign",8,2,4,0.2,"No","No",0,0,0,0,"No","No","Yes","No",44,6,25.2,2728
+"310",3909,"2011","male","never at","can sign",3,1,0,0.2,"Yes","No",0,0,0,0,"No","No","No","No",51.5,6,25.2,2725
+"311",3910,"2011","male","never at","can sign",4,1,3,-0.0333334,"No","No",0,0,0,0,"No","No","Yes","No",39,6,25.2,2725
+"312",3911,"2011","male","complete","can read",6,4,1,0,"Yes","No",0,0,0,0,"Yes","No","Yes","No",63,6,25.2,2725
+"313",3912,"2011","male","complete","can read",6,4,1,0,"No","No",0,0,0,0,"No","No","No","No",52.5,6,25.2,2724
+"314",3913,"2011","male","never at","cannot r",4,1,2,0.0666667,"Yes","No",0,0,0,0,"No","No","Yes","No",100,6,25.3,2452
+"315",3914,"2011","male","never at","can sign",2,0,0,-0.0333334,"No","No",0,0,0,0,"No","No","No","No",55.5,5,25.2,2724
+"316",3915,"2011","male","never at","cannot r",3,0,1,0.0666667,"No","No",0,0,0,0,"No","No","Yes","No",32.5,6,25.2,2725
+"317",3916,"2011","male","never at","can sign",4,2,1,-0.1666667,"No","No",0,0,0,0,"No","No","No","No",36.5,5,25.2,2723
+"318",3917,"2011","male","complete","can sign",5,2,2,-0.0333334,"No","No",0,0,0,0,"Yes","No","Yes","No",37.5,6,25.2,2725
+"319",3918,"2011","male","complete","can read",5,2,3,-0.2,"No","No",0,0,0,0,"Yes","No","Yes","No",62.5,6,25.2,2725
+"320",3919,"2011","male","never at","can sign",5,3,2,0.1,"No","No",0,0,0,0,"No","No","No","No",41.5,5,25.2,2724
+"321",3920,"2011","male","never at","cannot r",3,1,2,0,"No","No",0,0,0,0,"No","No","Yes","No",56.5,5,25.2,2722
+"322",3921,"2011","male","complete","can read",8,2,4,NA,"Yes","No",0,0,0,0,"No","No","Yes","No",57,6,25.3,2495
+"323",3922,"2011","male","complete","can read",5,2,1,0.1333333,"Yes","No",0,0,0,0,"No","No","Yes","No",87,6,25.3,2496
+"324",3923,"2011","male","never at","cannot r",4,2,1,-0.0666667,"No","No",0,0,0,0,"No","No","Yes","No",51.5,3,25.3,2496
+"325",3924,"2011","male","complete","can read",5,3,2,0,"Yes","No",0,0,0,0,"No","No","Yes","No",60,6,25.3,2496
+"326",3925,"2011","male","complete","can read",3,1,1,0.1,"Yes","No",0,0,0,0,"No","No","Yes","No",91,6,25.3,2496
+"327",3926,"2011","female","never at","can sign",4,3,1,NA,"No","No",0,0,0,0,"No","No","No","No",56,4,25.3,2496
+"328",3927,"2011","male","never at","can sign",6,4,2,0.2,"No","No",0,0,0,0,"No","No","No","No",37.5,5,25.3,2497
+"329",3928,"2011","male","complete","can read",3,0,1,0.2333334,"No","No",0,0,0,0,"No","No","No","No",47.5,6,25.3,2496
+"330",3929,"2011","male","never at","can sign",2,0,1,0.0666667,"Yes","No",0,0,0,0,"No","No","No","No",64,6,25.3,2497
+"331",3930,"2011","male","complete","can read",8,2,5,NA,"No","No",0,0,0,0,"No","No","Yes","No",55,6,25.3,2497
+"332",3931,"2011","male","never at","can sign",4,2,2,-0.0333334,"No","No",0,0,0,0,"No","No","Yes","No",66.5,6,25.3,2498
+"333",3932,"2011","female","never at","cannot r",1,0,0,NA,"No","No",0,0,0,0,"No","No","No","No",25,3,25.3,2498
+"334",3933,"2011","female","complete","can read",2,0,1,NA,"No","No",0,0,0,0,"No","No","Yes","No",41,6,25.3,2498
+"335",3934,"2011","male","complete","can read",3,0,3,0.2666667,"Yes","No",0,0,0,0,"No","No","Yes","No",64,6,25.3,2499
+"336",3935,"2011","male","never at","cannot r",7,3,3,-0.0333334,"No","No",0,0,0,0,"No","No","Yes","No",66,6,NA,NA
+"337",3936,"2011","male","never at","can sign",4,2,0,-0.1,"No","No",0,0,0,0,"No","No","Yes","No",52,6,25.3,2500
+"338",3937,"2011","male","never at","cannot r",4,2,2,-0.0333334,"Yes","No",0,0,0,0,"No","No","No","No",31.5,6,25.3,2499
+"339",3938,"2011","male","never at","cannot r",6,3,2,-0.0333334,"Yes","No",0,0,0,0,"No","No","Yes","No",47.5,6,25.3,2495
+"340",3939,"2011","male","never at","cannot r",5,2,3,0,"No","No",0,0,0,0,"No","No","Yes","No",40.5,5,25.3,2497
+"341",3940,"2011","male","complete","can read",4,2,2,0.0666667,"No","No",0,0,0,0,"No","No","No","No",56,6,25.3,2497
+"342",3941,"2011","female","never at","cannot r",3,2,0,NA,"No","No",0,0,0,0,"No","No","No","No",34.5,3,25.2,2854
+"343",3942,"2011","male","complete","can read",7,2,3,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",55.5,6,25.2,2856
+"344",3943,"2011","male","complete","can sign",5,2,2,NA,"No","No",0,0,0,0,"No","No","Yes","No",84,6,25.2,2722
+"345",3944,"2011","male","complete","can read",4,1,2,0.2,"No","No",0,0,0,0,"No","No","Yes","No",67,6,25.2,2855
+"346",3945,"2011","male","never at","cannot r",4,2,2,0.0666667,"No","No",0,0,0,0,"No","No","Yes","No",53,3,25.2,2855
+"347",3946,"2011","male","complete","can read",6,3,2,0.1,"Yes","No",0,0,0,0,"No","Yes","Yes","No",60.5,6,25.2,2855
+"348",3947,"2011","male","never at","cannot r",5,3,2,0.1,"No","No",0,0,0,0,"No","No","No","No",53.5,5,25.2,2851
+"349",3948,"2011","male","complete","can read",6,1,4,0.3000001,"Yes","No",0,0,0,0,"Yes","No","Yes","No",63,6,NA,NA
+"350",3949,"2011","male","complete","can read",4,2,2,0,"No","No",0,0,0,0,"No","No","Yes","No",62,3,25.2,2852
+"351",3950,"2011","female","never at","cannot r",3,1,1,NA,"No","No",0,0,0,0,"No","No","Yes","No",79,5,25.2,2849
+"352",3951,"2011","male","complete","can read",5,3,2,NA,"No","No",0,0,0,0,"No","No","Yes","No",28.5,6,25.2,2851
+"353",3952,"2011","male","never at","can sign",4,1,3,NA,"No","No",0,0,0,0,"No","No","Yes","No",82.5,6,25.2,2852
+"354",3953,"2011","male","complete","can read",5,0,4,NA,"No","No",0,0,0,0,"No","No","Yes","No",51.5,6,25.2,2854
+"355",3954,"2011","male","complete","can read",7,3,2,0.0333334,"No","No",0,0,0,0,"No","No","Yes","No",47,6,25.2,2854
+"356",3955,"2011","male","complete","can sign",7,4,2,-0.1,"Yes","No",0,0,0,0,"No","No","Yes","No",61.5,6,25.2,2850
+"357",3956,"2011","female","never at","cannot r",2,1,0,NA,"No","No",0,0,0,0,"No","No","No","No",30,3,25.2,2851
+"358",3957,"2011","male","complete","can read",5,2,3,0.1666667,"No","No",0,0,0,0,"Yes","No","Yes","No",68,6,25.2,2848
+"359",3958,"2011","female","never at","can sign",1,0,0,NA,"No","No",0,0,0,0,"No","Yes","No","No",76.5,6,25.2,2849
+"360",3959,"2011","male","never at","can sign",7,4,2,-0.1666667,"Yes","No",0,0,0,0,"No","No","Yes","No",65.5,6,25.2,2850
+"361",3960,"2011","male","never at","can sign",3,0,2,0.0666667,"No","No",0,0,0,0,"No","No","Yes","No",32.5,6,25.2,2851
+"362",3961,"2011","female","never at","can sign",4,3,1,NA,"No","No",0,0,0,0,"No","No","No","No",40.5,6,25.2,2599
+"363",3962,"2011","male","never at","can sign",4,2,2,0,"No","No",0,0,0,0,"No","No","Yes","No",33.5,4,25.2,2606
+"364",3963,"2011","male","never at","can sign",7,1,4,-0.2333334,"Yes","No",0,0,0,0,"Yes","No","Yes","No",59.5,6,25.2,2598
+"365",3964,"2011","male","never at","can sign",3,1,2,-0.0666667,"No","No",0,0,0,0,"No","No","Yes","No",56,6,25.2,2599
+"366",3965,"2011","male","ma/msc a","can read",6,2,1,0.2333334,"No","No",0,0,0,0,"No","No","Yes","No",59.5,6,25.2,2600
+"367",3966,"2011","male","never at","cannot r",2,0,0,0.0666667,"No","No",0,0,0,0,"No","No","No","No",36.5,6,25.2,2600
+"368",3967,"2011","male","complete","can read",7,2,2,0.2,"Yes","No",0,0,0,0,"No","No","Yes","No",63,6,25.2,2600
+"369",3968,"2011","male","never at","can sign",6,2,2,0.1666667,"Yes","No",0,0,0,0,"No","No","Yes","No",85.5,6,25.2,2602
+"370",3969,"2011","male","never at","can sign",2,0,0,NA,"No","No",0,0,0,0,"No","No","No","No",22,3,25.2,2602
+"371",3970,"2011","male","never at","can sign",6,4,2,0.0666667,"No","No",0,0,0,0,"No","No","Yes","No",44,5,25.2,2606
+"372",3971,"2011","male","never at","cannot r",7,4,2,NA,"No","No",0,0,0,0,"No","No","Yes","No",46,5,25.2,2608
+"373",3972,"2011","male","reads in","can sign",3,1,2,0.2,"No","No",0,0,0,0,"No","No","No","No",26.5,5,25.2,2609
+"374",3973,"2011","male","never at","can sign",6,4,2,0.2,"No","No",0,0,0,0,"No","No","No","No",63,6,25.2,2609
+"375",3974,"2011","male","complete","can read",7,3,4,-0.2333333,"No","No",0,0,0,0,"No","No","Yes","No",43.5,6,25.2,2608
+"376",3975,"2011","female","never at","cannot r",4,3,1,NA,"No","No",0,0,0,0,"No","No","No","No",36.5,5,25.2,2607
+"377",3976,"2011","female","never at","cannot r",7,2,3,NA,"No","No",0,0,0,0,"No","No","No","No",46.5,5,25.2,2608
+"378",3977,"2011","male","never at","cannot r",5,2,2,0.1666667,"Yes","No",0,0,0,0,"No","No","Yes","No",64.5,6,25.2,2605
+"379",3978,"2011","male","never at","cannot r",4,2,2,-0.1,"No","No",0,0,0,0,"No","No","No","No",55.5,6,25.2,2605
+"380",3979,"2011","male","complete","can read",2,0,2,0,"No","No",0,0,0,0,"No","No","Yes","No",56,6,25.2,2609
+"381",3980,"2011","female","complete","can read",4,2,2,NA,"No","No",0,0,0,0,"No","No","Yes","No",36,5,25.2,2605
+"382",3981,"2011","male","never at","can sign",6,4,2,-0.0333334,"Yes","No",0,0,0,0,"No","No","Yes","No",41.5,6,25.2,2547
+"383",3982,"2011","female","complete","can read",4,3,1,NA,"No","No",0,0,0,0,"No","No","Yes","No",48.5,6,25.2,2547
+"384",3983,"2011","male","never at","cannot r",7,4,2,-0.1,"No","No",0,0,0,0,"No","No","Yes","No",43.5,6,25.2,2546
+"385",3984,"2011","male","never at","can sign",6,1,3,0.2,"Yes","No",0,0,0,0,"No","No","Yes","No",57,5,25.2,2548
+"386",3985,"2011","male","reads in","can sign",6,2,3,-0.1,"No","No",0,0,0,0,"No","No","Yes","No",54,5,25.2,2548
+"387",3986,"2011","male","never at","cannot r",5,1,3,0.0666667,"Yes","No",0,0,0,0,"No","No","Yes","No",79,6,25.2,2547
+"388",3987,"2011","female","never at","can sign",2,1,0,NA,"No","No",0,0,0,0,"No","No","No","No",57.5,6,25.2,2546
+"389",3988,"2011","male","never at","cannot r",6,4,2,-0.1,"No","No",0,0,0,0,"No","No","No","No",39.5,3,25.2,2544
+"390",3989,"2011","female","never at","cannot r",1,0,0,NA,"No","No",0,0,0,0,"No","No","No","No",31.5,4,25.2,2543
+"391",3990,"2011","male","never at","cannot r",8,3,3,NA,"No","No",0,0,0,0,"Yes","No","Yes","No",91,6,25.2,2544
+"392",3991,"2011","male","complete","can read",4,2,2,0.4666668,"No","No",0,0,0,0,"No","No","Yes","No",66,6,25.2,2545
+"393",3992,"2011","male","never at","cannot r",5,3,0,0.3333334,"No","No",0,0,0,0,"No","No","No","No",43.5,3,25.2,2544
+"394",3993,"2011","male","complete","can read",6,2,4,-0.1,"Yes","No",0,0,0,0,"Yes","No","Yes","No",88.5,6,25.3,2542
+"395",3994,"2011","male","complete","can read",4,2,2,-0.1,"No","No",0,0,0,0,"No","No","Yes","No",64.5,6,25.2,2543
+"396",3995,"2011","male","complete","can read",5,3,2,-0.1,"Yes","No",0,0,0,0,"No","No","Yes","No",47.5,6,25.2,2543
+"397",3996,"2011","male","complete","can read",3,0,2,0.1,"No","No",0,0,0,0,"No","No","Yes","No",60,6,25.2,2544
+"398",3997,"2011","male","never at","can sign",6,2,3,-0.0333334,"Yes","No",0,0,0,0,"No","No","Yes","No",41.5,6,25.3,2528
+"399",3998,"2011","male","never at","can sign",6,2,3,NA,"No","No",0,0,0,0,"No","No","Yes","No",63,6,25.2,2543
+"400",3999,"2011","female","never at","cannot r",1,0,0,NA,"No","No",0,0,0,0,"No","No","No","No",52.5,5,25.2,2543
+"401",4000,"2011","male","never at","cannot r",5,1,2,0,"No","No",0,0,0,0,"No","No","Yes","No",45,5,25.2,2543
+"402",2381,"2015","male","never at","can sign",9,0,7,0.2666667,"Yes",NA,18,3,1,0,NA,NA,"Yes",NA,90,6,25.1,2782
+"403",2382.1,"2015","male","complete","can read",11,3,3,-0.3000001,"No",NA,3,0,1,0,NA,NA,NA,NA,63,6,25.1,2782
+"404",2382.2,"2015","male","complete","can read",11,1,2,NA,NA,NA,6,0,0,0,NA,NA,NA,NA,90,6,25.1,2778
+"405",2383,"2015","male","never at","can sign",8,3,2,0.2333334,"Yes",NA,24,8,0,0,"Yes",NA,"Yes",NA,100,6,25.1,2782
+"406",2384,"2015","male","never at","can sign",9,1,5,-0.2,"Yes",NA,12,4,1,0,"Yes",NA,"Yes",NA,107,6,25.1,2782
+"407",2385,"2015",NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,NA,NA,25.1,2782
+"408",2386,"2015","female","never at","cannot r",5,3,1,NA,NA,NA,0,2,1,0,NA,NA,"Yes",NA,60,5,25.1,2826
+"409",2387,"2015","female","complete","can read",7,2,3,NA,"No",NA,0,1,1,0,"Yes",NA,"Yes",NA,71,6,25.1,2781
+"410",2388,"2015","male","complete","can read",5,3,1,NA,NA,NA,7,0,1,0,NA,NA,"Yes",NA,68,6,25.1,2781
+"411",2389,"2015","male","complete","can read",4,1,2,-0.0333334,NA,NA,0,1,0,0,NA,NA,NA,NA,87,6,25.1,2780
+"412",2390,"2015","male","never at","can sign",5,1,2,-0.3000001,"No",NA,2,0,1,0,NA,NA,"Yes",NA,78,6,25.1,2781
+"413",2391,"2015","male","never at","can sign",7,2,3,-0.3000001,"No",NA,5,5,2,0,NA,NA,"Yes",NA,90,6,25.1,2781
+"414",2392,"2015","male","complete","can read",8,2,2,-0.2,NA,NA,6,0,0,0,NA,NA,NA,NA,68,5,25.1,2781
+"415",2393,"2015","male","complete","can sign",3,1,2,-0.3000001,NA,NA,0,1,1,0,NA,NA,"Yes",NA,97,6,25.1,2781
+"416",2394,"2015","male","never at","cannot r",4,2,2,-0.2,NA,NA,7,0,0,0,NA,NA,"Yes",NA,63,5,25.1,2779
+"417",2395,"2015","male","complete","can read",7,2,3,-0.2,NA,NA,17,3,1,0,NA,NA,"Yes",NA,95.5,6,25.1,2779
+"418",2396,"2015","male","never at","can sign",4,2,1,-0.2,NA,NA,6,1,1,0,NA,NA,NA,NA,90,6,25.1,2778
+"419",2397,"2015","male","never at","can sign",4,2,2,-0.2,NA,NA,4,0,1,0,NA,NA,"Yes",NA,96,6,25.1,2782
+"420",2398,"2015","male","complete","can read",11,5,5,-0.0666667,"Yes",NA,0,6,1,0,NA,NA,"Yes",NA,98,6,25.1,2780
+"421",2399,"2015","male","never at","can sign",6,4,1,-0.2,NA,NA,7,1,0,0,NA,NA,NA,NA,56.5,5,25.1,2780
+"422",2400,"2015","male","never at","cannot r",3,0,1,-0.1666667,"Yes",NA,10,0,1,0,NA,NA,NA,NA,59,6,25.1,2780
+"423",3881,"2015",NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,NA,NA,25.2,2726
+"424",3882,"2015","male","never at","can sign",6,1,3,0.1,NA,NA,10,0,0,3,NA,NA,"Yes",NA,62,6,25.2,2729
+"425",3883,"2015","male","complete","can read",9,3,2,0.1,NA,NA,2,0,0,1,NA,NA,"Yes",NA,60,6,25.2,2727
+"426",3884,"2015",NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,NA,NA,25.2,2728
+"427",3885,"2015","female","never at","cannot r",5,0,1,NA,NA,NA,11,1,0,0,NA,NA,"Yes",NA,56.5,6,25.2,2727
+"428",3886,"2015","male","never at","can sign",4,1,2,NA,NA,NA,3,1,0,0,NA,NA,"Yes",NA,59.5,6,25.2,2731
+"429",3887,"2015","male","never at","cannot r",2,0,0,-0.3,NA,NA,3,0,0,0,NA,NA,"Yes",NA,42,4,25.2,2731
+"430",3888,"2015","male","never at","cannot r",8,4,2,0,NA,NA,9,0,0,0,NA,NA,"Yes",NA,64,6,25.2,2731
+"431",3889,"2015","male","never at","cannot r",5,1,1,0.1,"No",NA,1,1,0,0,NA,NA,"Yes",NA,76.5,6,25.2,2730
+"432",3890,"2015","female","never at","can sign",6,4,1,NA,NA,NA,3,0,0,0,NA,NA,"Yes",NA,44,6,25.2,2731
+"433",3891,"2015","male","never at","can sign",9,5,3,-0.1,"No",NA,5,3,0,0,NA,NA,"Yes",NA,68,6,25.2,2733
+"434",3892,"2015","male","complete","can read",3,1,0,0.1,NA,NA,1,0,0,0,NA,"No","Yes",NA,96,6,25.2,2738
+"435",3893,"2015",NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,NA,NA,25.2,2738
+"436",3894,"2015","male","never at","can sign",8,3,2,NA,"Yes",NA,15,1,0,0,NA,NA,"Yes",NA,66,6,25.2,2738
+"437",3895,"2015","male","complete","can read",5,1,2,-0.0333334,NA,NA,3,1,0,0,NA,NA,"Yes",NA,59,6,25.2,2739
+"438",3896,"2015","male","never at","cannot r",7,4,2,-0.1,NA,NA,27,3,0,3,NA,NA,"Yes",NA,59.5,6,25.2,2741
+"439",3897,"2015","male","complete","can read",6,4,1,-0.2,NA,NA,0,0,0,0,NA,NA,"Yes",NA,81,4,25.2,2740
+"440",3898,"2015","male","never at","can sign",7,1,4,0,"Yes",NA,17,2,0,0,NA,NA,"Yes",NA,84,6,25.2,2737
+"441",3899,"2015","male","never at","can sign",4,1,2,-0.2,NA,NA,18,0,0,0,NA,NA,"Yes",NA,56.5,6,25.2,2737
+"442",3900,"2015","male","complete","can read",2,0,0,0.1,NA,NA,3,1,0,0,NA,NA,"Yes",NA,68,6,25.2,2734
+"443",3901,"2015","male","complete","can read",7,3,2,0.0666667,NA,NA,0,0,0,0,NA,NA,"Yes",NA,55,6,25.2,2732
+"444",3902,"2015","male","complete","can read",4,2,2,-0.2,NA,"Yes",0,0,0,0,NA,NA,"Yes",NA,64,6,25.2,2730
+"445",3903,"2015","male","never at","cannot r",6,4,2,0,"No",NA,47,2,0,0,NA,NA,"Yes",NA,78.5,6,25.2,2729
+"446",3904,"2015","female","never at","cannot r",4,3,1,NA,NA,NA,0,2,0,0,NA,NA,NA,NA,88.5,6,25.2,2730
+"447",3905,"2015","male","never at","cannot r",3,0,2,NA,"Yes",NA,0,0,0,0,NA,NA,"Yes",NA,60.5,6,25.2,2729
+"448",3906,"2015",NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,NA,NA,25.2,2728
+"449",3907,"2015","male","never at","can sign",5,1,1,0.1,"No",NA,2,2,0,0,NA,NA,"Yes",NA,50,6,25.2,2728
+"450",3908,"2015","male","reads in","can sign",8,1,4,0,NA,NA,15,0,0,1,NA,NA,"Yes",NA,98,6,25.2,2728
+"451",3909,"2015","female","never at","can sign",3,0,0,NA,"Yes",NA,19,0,0,0,NA,NA,NA,NA,40.5,6,25.2,2725
+"452",3910,"2015","male","never at","can sign",4,1,2,-0.1,NA,NA,21,0,0,0,NA,NA,"Yes",NA,63,6,25.2,2725
+"453",3911,"2015","male","complete","can read",6,2,3,0.2,"No",NA,22,0,0,0,"Yes",NA,"Yes",NA,61,6,25.2,2725
+"454",3912,"2015","male","complete","can read",6,4,1,0,NA,NA,0,0,0,1,NA,NA,NA,NA,58,6,25.2,2724
+"455",3913,"2015","male","never at","cannot r",4,1,2,0,"Yes",NA,14,3,0,0,NA,NA,"Yes",NA,97,6,25.3,2452
+"456",3914,"2015","male","never at","can sign",2,0,0,0.1,NA,NA,10,0,0,0,NA,NA,NA,NA,87,6,25.2,2724
+"457",3915,"2015","male","never at","cannot r",3,0,1,0,NA,NA,1,0,0,0,NA,NA,"Yes",NA,49,6,25.2,2725
+"458",3916,"2015","male","never at","can sign",5,2,2,-0.1,NA,NA,1,0,0,0,NA,NA,"Yes",NA,65.5,6,25.2,2723
+"459",3917,"2015","male","complete","can sign",6,1,3,-0.1,NA,NA,9,0,0,0,"Yes",NA,"Yes",NA,68,6,25.2,2725
+"460",3918,"2015","male","complete","can read",5,1,3,-0.3,NA,NA,21,0,1,0,"Yes",NA,"Yes",NA,64,6,25.2,2725
+"461",3919,"2015","male","never at","can sign",6,4,2,0.1,NA,NA,0,0,0,2,NA,NA,NA,NA,53,6,25.2,2724
+"462",3920,"2015","male","never at","cannot r",5,1,4,0,NA,NA,0,0,0,0,NA,NA,"Yes",NA,45,6,25.2,2722
+"463",3921,"2015","male","complete","can read",10,3,5,0.1666667,"No",NA,0,4,0,0,NA,NA,"Yes",NA,70.5,6,25.3,2495
+"464",3922,"2015","male","complete","can read",6,0,1,NA,"No",NA,4,1,0,0,NA,NA,"Yes",NA,80.5,6,25.3,2496
+"465",3923,"2015","male","never at","cannot r",5,1,1,0,NA,NA,11,1,0,0,NA,NA,"Yes",NA,51.5,6,25.3,2496
+"466",3924,"2015","male","complete","can read",5,2,3,-0.2,"Yes",NA,15,1,0,0,NA,NA,NA,NA,75,6,25.3,2496
+"467",3925,"2015","male","complete","can read",3,0,2,0.1666667,"Yes",NA,1,1,0,0,NA,NA,"Yes",NA,51,6,25.3,2496
+"468",3926,"2015","female","never at","can sign",4,2,1,NA,NA,NA,3,0,0,3,NA,NA,NA,NA,64,6,25.3,2496
+"469",3927,"2015","male","complete","can read",7,5,1,-0.1,NA,NA,2,1,0,0,NA,NA,"Yes",NA,30.5,5,25.3,2497
+"470",3928,"2015","male","complete","can read",3,0,0,0.1,NA,NA,4,3,0,0,NA,NA,"Yes",NA,82,6,25.3,2496
+"471",3929,"2015","male","never at","can sign",2,0,0,0.1666667,"No",NA,15,2,0,0,NA,NA,NA,NA,68,6,25.3,2497
+"472",3930,"2015","male","complete","can read",9,1,3,NA,NA,NA,1,2,0,0,NA,NA,"Yes",NA,72,6,25.3,2497
+"473",3931,"2015","female","complete","can read",5,3,1,NA,NA,NA,0,0,0,0,NA,NA,"Yes",NA,77.5,6,25.3,2498
+"474",3932,"2015",NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,NA,NA,25.3,2498
+"475",3933,"2015","female","complete","can read",3,1,1,NA,NA,NA,2,0,0,0,NA,NA,"Yes",NA,63.5,6,25.3,2498
+"476",3934,"2015","male","complete","can read",3,0,2,-0.1,"Yes",NA,25,2,0,0,"Yes",NA,"Yes",NA,72,6,25.3,2499
+"477",3935.1,"2015","male","never at","cannot r",8,4,2,0.1,NA,NA,10,1,0,0,NA,NA,"Yes",NA,46,6,25.3,2500
+"478",3935.2,"2015","male","complete","can read",9,1,2,0.1333334,NA,NA,12,3,0,0,NA,NA,"Yes",NA,81,6,25.3,2500
+"479",3936,"2015","male","never at","can sign",7,1,1,0.1666667,NA,NA,0,0,0,0,NA,NA,"Yes",NA,69,6,25.3,2500
+"480",3937,"2015","male","never at","cannot r",5,3,2,0.1333334,"No","Yes",0,0,0,0,NA,NA,"Yes",NA,81,6,25.3,2499
+"481",3938,"2015","male","never at","cannot r",7,3,3,0.1,"No",NA,2,3,0,1,NA,NA,"Yes",NA,72,6,25.3,2495
+"482",3939,"2015","male","never at","cannot r",6,2,2,0.1,NA,NA,0,1,0,0,NA,NA,"Yes",NA,54,6,25.3,2497
+"483",3940,"2015","male","complete","can read",5,2,2,0.1666667,NA,NA,2,3,0,0,NA,NA,"Yes",NA,87,6,25.3,2497
+"484",3941,"2015","female","never at","cannot r",3,1,0,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,63,6,25.2,2854
+"485",3942,"2015","male","complete","can read",7,1,3,0,NA,NA,4,0,0,0,"Yes",NA,"Yes",NA,83,6,25.2,2856
+"486",3943,"2015","male","complete","can sign",7,3,3,NA,NA,NA,20,7,0,0,NA,NA,"Yes",NA,91,6,25.2,2722
+"487",3944,"2015","female","complete","can read",4,1,1,NA,NA,NA,9,0,0,0,NA,NA,"Yes",NA,85,6,25.2,2855
+"488",3945,"2015","male","never at","cannot r",4,2,2,0.1,NA,NA,0,0,0,0,NA,NA,"Yes",NA,66.5,5,25.2,2855
+"489",3946,"2015","male","complete","can read",10,2,2,0,"No",NA,2,0,0,0,NA,"No","Yes",NA,41.5,6,25.2,2855
+"490",3947,"2015","male","never at","cannot r",5,3,2,0.3000001,NA,NA,0,0,0,0,NA,NA,NA,NA,66,6,25.2,2851
+"491",3948.1,"2015","male","complete","can read",7,2,2,0.1666667,"No",NA,0,0,0,0,"Yes",NA,"Yes",NA,68,6,25.2,2853
+"492",3948.2,"2015","male","complete","can read",7,1,2,0,"No",NA,0,0,0,0,"Yes",NA,"Yes",NA,63,6,25.2,2853
+"493",3949,"2015","male","complete","can read",4,2,2,0.0666667,NA,NA,5,0,16,0,NA,NA,"Yes",NA,67,6,25.2,2852
+"494",3950,"2015","female","never at","can sign",3,1,1,NA,NA,NA,2,0,0,0,NA,NA,"Yes",NA,62,6,25.2,2849
+"495",3951,"2015","male","complete","can read",5,3,2,0,NA,NA,1,0,0,0,NA,NA,"Yes",NA,47.5,6,25.2,2851
+"496",3952,"2015","male","never at","can sign",5,1,3,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,53,6,25.2,2852
+"497",3953,"2015","male","complete","can read",5,0,3,NA,NA,NA,6,1,0,1,NA,NA,"Yes",NA,47.5,6,25.2,2854
+"498",3954,"2015","male","complete","can read",7,2,2,-0.4333334,NA,NA,5,0,0,0,NA,NA,"Yes",NA,64.5,6,25.2,2854
+"499",3955,"2015","male","complete","can sign",7,3,3,0,"No",NA,15,7,0,5,NA,NA,NA,NA,97.5,6,25.2,2850
+"500",3956,"2015","female","never at","cannot r",3,1,1,NA,NA,NA,18,0,0,2,NA,NA,"Yes",NA,51.5,5,25.2,2851
+"501",3957,"2015","male","complete","can read",5,1,2,-0.1333334,NA,NA,0,0,0,0,"Yes",NA,"Yes",NA,112,6,25.2,2848
+"502",3958,"2015","female","never at","can sign",1,0,0,NA,NA,NA,2,1,0,0,NA,"No","Yes",NA,97,6,25.2,2849
+"503",3959,"2015","male","never at","can sign",7,3,2,0.1,"Yes",NA,6,0,0,5,NA,NA,"Yes",NA,63,6,25.2,2850
+"504",3960,"2015","male","never at","can sign",5,2,2,0.1,NA,NA,0,2,0,0,NA,NA,"Yes",NA,49,6,25.2,2851
+"505",3961,"2015","female","never at","cannot r",5,2,0,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,44.5,5,25.2,2599
+"506",3962,"2015","male","never at","can sign",4,2,2,0,NA,NA,0,0,0,2,NA,NA,"Yes",NA,60,5,25.2,2606
+"507",3963,"2015","male","never at","can sign",7,1,4,0.1,"No",NA,3,4,48,0,NA,NA,"Yes",NA,58,6,25.2,2598
+"508",3964,"2015","male","complete","can read",4,1,2,-0.1,NA,NA,23,0,10,0,NA,NA,"Yes",NA,68,6,25.2,2599
+"509",3965,"2015","female","complete","can read",7,3,1,NA,NA,NA,0,0,0,0,NA,NA,"Yes",NA,65.5,6,25.2,2600
+"510",3966,"2015","male","never at","cannot r",2,0,0,0.3,NA,NA,0,0,0,0,NA,NA,NA,NA,44.5,4,25.2,2600
+"511",3967,"2015","male","complete","can read",8,1,4,-0.2,"Yes",NA,5,3,0,0,"Yes",NA,"Yes",NA,59,6,25.2,2600
+"512",3968,"2015","male","never at","can sign",6,2,1,0,"Yes",NA,28,2,0,0,NA,NA,"Yes",NA,58,6,25.2,2602
+"513",3969,"2015","male","never at","can sign",5,2,1,-0.1333334,NA,NA,5,0,0,0,NA,NA,NA,NA,44,6,25.2,2602
+"514",3970,"2015",NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,NA,NA,25.2,2606
+"515",3971,"2015","male","never at","cannot r",7,0,1,NA,NA,NA,0,0,0,0,NA,NA,"Yes",NA,46.5,6,25.2,2608
+"516",3972,"2015","male","never at","cannot r",5,2,2,0.3,NA,NA,0,0,0,0,NA,NA,NA,NA,56.5,5,25.2,2609
+"517",3973,"2015","male","never at","can sign",6,4,2,0.2,NA,NA,1,1,0,0,NA,NA,"Yes",NA,55.5,5,25.2,2609
+"518",3974,"2015","male","complete","can read",7,2,4,0.1,NA,NA,2,4,0,0,NA,NA,"Yes",NA,62,6,25.2,2608
+"519",3975,"2015","male","never at","cannot r",5,3,1,-0.1333334,NA,NA,0,0,0,0,NA,NA,"Yes",NA,42.5,6,25.2,2607
+"520",3976,"2015","female","never at","cannot r",7,0,0,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,32.5,5,25.2,2608
+"521",3977,"2015","female","never at","cannot r",5,0,3,NA,"No",NA,5,2,0,0,NA,NA,"Yes",NA,40,6,25.2,2605
+"522",3978,"2015","female","complete","can read",4,2,1,NA,NA,NA,10,0,0,0,NA,NA,"Yes",NA,62.5,6,25.2,2605
+"523",3979,"2015","male","complete","can read",2,0,2,-0.2,NA,NA,2,0,0,0,NA,NA,"Yes",NA,46,6,25.2,2609
+"524",3980,"2015","female","never at","cannot r",4,2,0,NA,NA,NA,0,0,0,0,"Yes",NA,NA,NA,50.5,6,25.2,2605
+"525",3981,"2015","male","never at","can sign",6,2,3,-0.1,"No",NA,18,0,0,0,NA,NA,"Yes",NA,62,6,25.2,2547
+"526",3982,"2015","female","complete","can read",4,3,1,NA,NA,NA,0,0,0,0,"Yes",NA,"Yes",NA,69.5,6,25.2,2547
+"527",3983,"2015","male","never at","cannot r",7,3,1,0,NA,NA,27,2,0,5,NA,NA,NA,NA,63,6,25.2,2546
+"528",3984,"2015","male","never at","can sign",8,2,4,0.1,"Yes",NA,6,4,0,0,"Yes",NA,"Yes",NA,89,6,25.2,2548
+"529",3985,"2015","male","reads in","can sign",8,2,4,NA,NA,NA,3,3,0,0,NA,NA,"Yes",NA,57,6,25.2,2548
+"530",3986,"2015","male","never at","cannot r",5,0,4,0,"Yes",NA,27,5,0,0,"Yes",NA,"Yes",NA,59,6,25.2,2547
+"531",3987,"2015","female","never at","can sign",4,1,2,NA,NA,NA,4,0,0,0,NA,NA,"Yes",NA,52.5,6,25.2,2546
+"532",3988,"2015","male","never at","cannot r",7,4,1,0.0666667,NA,NA,10,0,0,0,NA,NA,"Yes",NA,47,4,25.2,2544
+"533",3989,"2015","female","never at","cannot r",1,0,0,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,40.5,6,25.2,2543
+"534",3990,"2015","male","never at","cannot r",10,2,1,0.1,NA,NA,5,3,0,0,"Yes",NA,"Yes",NA,69,6,25.2,2544
+"535",3991,"2015","male","complete","can read",4,2,2,0.1,NA,NA,10,0,0,0,NA,NA,"Yes",NA,58.5,6,25.2,2545
+"536",3992,"2015","male","never at","cannot r",6,4,0,-0.0666667,NA,NA,1,0,0,0,NA,NA,NA,NA,76.5,6,25.2,2544
+"537",3993,"2015","male","complete","can read",6,1,5,0.1,NA,NA,24,3,0,0,"Yes",NA,"Yes",NA,85,6,25.3,2542
+"538",3994,"2015","male","complete","can read",4,2,2,-0.1,NA,NA,6,0,0,2,NA,NA,"Yes",NA,64,6,25.2,2543
+"539",3995,"2015","male","complete","can read",5,3,2,0.1,"Yes",NA,21,0,0,0,NA,NA,"Yes",NA,57,6,25.2,2543
+"540",3996,"2015","male","complete","can read",3,0,0,0,NA,NA,24,0,0,0,NA,NA,"Yes",NA,44,6,25.2,2544
+"541",3997,"2015","male","never at","can sign",7,2,3,0,"Yes",NA,2,2,0,0,NA,NA,"Yes",NA,79,6,25.3,2528
+"542",3998,"2015","male","never at","can sign",7,2,2,0.1,NA,NA,4,0,0,0,"Yes",NA,"Yes",NA,66,6,25.2,2543
+"543",3999,"2015","female","never at","can sign",1,0,0,NA,NA,NA,0,0,0,0,NA,NA,NA,NA,60.5,5,25.2,2543
+"544",4000,"2015","male","complete","can read",6,1,0,0.1666667,NA,NA,6,0,0,0,NA,NA,"Yes",NA,61,6,25.2,2543

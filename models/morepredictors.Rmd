@@ -1,12 +1,15 @@
 ---
-title: "Stat 245 -- HW ??"
-author: "A. Student"
+title: "BIHS Model Fitting"
+subtitle: "STAT-245, Calvin University"
+author: "Ivanna Rodriguez, Myungha Kim, James Eapen"
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
 output: 
-  html_document:
+  pdf_document:
     fig_height: 2.2
     fig_width: 4
-  pdf_document:
+    toc: true
+    toc_depth: 2
+  html_document:
     fig_height: 2.2
     fig_width: 4
   word_document:
@@ -20,6 +23,16 @@ require(tidyverse)   # this loads mosaic, ggformula, etc. too
 require(ggformula)
 require(mosaic)
 
+# to read excel files
+require(readxl)
+# for collinearity
+require(GGally)
+# for IC
+require(MuMIn)
+# for VIF
+require(car)
+
+
 # Some customization.  You can alter or delete as desired (if you know what you are doing).
 
 theme_set(theme_bw(base_size=12))     # change theme for ggplot2/ggformula
@@ -32,13 +45,13 @@ knitr::opts_chunk$set(
 ```
 
 
-<!-- Put your work below here.  Put text in text chunks, code in R chunks. -->
-
-### Problem 0.0
-
-### Problem ?.?
-
+```{r, include = FALSE}
+# reading in the data
+bihs <- read_csv('bihs_final.csv')
+```
 
 
+```{r}
+more_pred <- lm(fcs ~ factor(year) + memb_total + memb_und15 + memb_15_44 + asset_qty_poultry + mean_annual_temp + annual_precip + hhs_total, data = bihs)
+```
 
-  
