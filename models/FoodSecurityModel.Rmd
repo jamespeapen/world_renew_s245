@@ -48,7 +48,7 @@ knitr::opts_chunk$set(
 
 ```{r, include = FALSE}
 # reading in the data
-bihs <- read_csv('bihs_final.csv')
+bihs <- read.csv('bihs_final.csv')
 bihs_original <- read_excel('../tidy_dataset/BIHS_household_2011_15.xlsx')
 bihs <- bihs%>%mutate(house_owned = bihs_original$house_owned)
 bihs_original$survey_year <- as.factor(bihs_original$survey_year)
@@ -81,19 +81,15 @@ bihs_original <- bihs_original%>%
 
 # Executive Summary
 
-The goal of the project was to perform a comparative analysis between the Bangladesh Integrated Household Income Survey (BIHS) conducted by the International Food Policy Research Institute (IFPRI), and the GAC Livelihoods survey conducted by our client. The Sustainable Livelihoods project from which the GAC survey originates is a program that World Renew implemented in Bangladesh. Per our client's request, we only performed analysis on the BIHS dataset. The goal of this approach was to draw conclusions from this general household survey that would allow our client to compare to the conclusions they reached when evaluating their own program. Ultimately, our client was interested in measuring whether World Renew's program had an impact in Bangladesh by treating the BIHS Survey we used for this analysis as their "control" group.
+The goal of the project was to perform a comparative analysis between the Bangladesh Integrated Household Income Survey (BIHS) conducted by the International Food Policy Research Institute (IFPRI), and the GAC Livelihoods survey conducted by our client. The Sustainable Livelihoods project from which the GAC survey originates is a program that World Renew implemented in Bangladesh. Per our client's request, we only performed analysis on the BIHS dataset. The goal of this approach was to draw conclusions from this general household survey that would allow our client to compare to the conclusions they reached when evaluating their own program. Ultimately, our client was interested in measuring whether World Renew's program had an impact in Bangladesh by treating the BIHS Survey we used for this analysis as their "control" group. We found that each household's number of cattle, household total occupancy, precipitation, the ownership of a cartplough, and telephone ownership were significant at at least a 0.05 significance level in influencing the food security score. Our attempts at descriptive statistics did not work because there were too many NA values in the data that prevented us from getting representative measures from the dataset.
 
-Our analysis is divided in two parts. First, we created a linear model that would allow us to assess whether assets are good predictors of food security. Second, we created descriptive statistics. These serve the purpose of allowing our client to compare against their results for the GAC Livelihoods program evaluation.
-
-
-# Questions and Answers
+Our analysis is divided in two parts. First, we created a linear model that would allow us to assess whether assets are good predictors of food security. Second, we created descriptive statistics. These serve the purpose of allowing our client to compare against their results for the GAC Livelihoods program evaluation. 
 
 
+# Questions and Answers  
+Were there broader changes taking place in the communities where World Renew's partners worked that influenced our observed results? We planned on answering this question using the results from World Renew and the 2011 and 2015 data sets from the Bangladesh Integrated Household Survey. However, as we made our models, we realized that we could not make good comparisons because the variables used by the GAC livelihoods regressions were quite different from the variables available to us in the BIHS dataset. We attempted to make similar variables, but were not able to because there were no variables we could use or the data had too many NA values. 
 
-
-
-
-# Food Consumption Model
+## Food Consumption Model
 
 The following document outlines our process looking at the factors that are associated with variations in the Food Consumption Score (`fcs`) which is a numeric score with values ranging from 0 to 120. This score is calculated by International Food Policy Research Institute. BIHS dataset was filtered by specific regions in Bangladesh where World Renew ran their programs. 
 
