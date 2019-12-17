@@ -1,5 +1,5 @@
 ---
-title: "BIHS Model Fitting"
+title: "Analyzing Sustainable Livelihoods in Bangladesh for World Renew"
 subtitle: "STAT-245, Calvin University"
 author: "Ivanna Rodriguez, Myungha Kim, James Eapen"
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
@@ -44,6 +44,7 @@ knitr::opts_chunk$set(
   message = FALSE, warning = FALSE) # don't print warnings or messages in compiled document. So you MUST check them in RStudio!
 ```
 
+# Data Preparation
 
 ```{r, include = FALSE}
 # reading in the data
@@ -78,32 +79,51 @@ bihs_original <- bihs_original%>%
 
 
 
-The following document outlines our process for fitting a model that would predict food security score with the BIHS dataset. 
+# Executive Summary
 
-We used the variable `fcs` as our response variable. This is the food consumption score in the BIHS dataset that is a similar measure to the food security scores used in the GAC Livelihoods regressions. For our predictors, we looked at the predictors from the GAC Livelihoods that were statistically significant, and tried to find similar predictors in the BIHS dataset, which was a difficult task. We determined that `house_owned` and all of the assets predictors would be good candidates. 
+The goal of the project was to perform a comparative analysis between the Bangladesh Integrated Household Income Survey (BIHS) conducted by the International Food Policy Research Institute (IFPRI), and the GAC Livelihoods survey conducted by our client. The Sustainable Livelihoods project from which the GAC survey originates is a program that World Renew implemented in Bangladesh. Per our client's request, we only performed analysis on the BIHS dataset. The goal of this approach was to draw conclusions from this general household survey that would allow our client to compare to the conclusions they reached when evaluating their own program. Ultimately, our client was interested in measuring whether World Renew's program had an impact in Bangladesh by treating the BIHS Survey we used for this analysis as their "control" group.
 
-We thought that the best way to go about determining what predictors were significant was to fit a model with as many variables from BIHS as we could, in addition to those found significant in the GAC Likelihoods regressions.
+Our analysis is divided in two parts. First, we created a linear model that would allow us to assess whether assets are good predictors of food security. Second, we created descriptive statistics. These serve the purpose of allowing our client to compare against their results for the GAC Livelihoods program evaluation.
 
 
-# Exploratory plots
+# Questions and Answers
 
-We selected a few categorical variables for the BIHS dataset to see if there might be a relationship between the response `fcs` and the predictors. The boxplots are shown below.
+
+
+
+
+
+# Food Consumption Model
+
+The following document outlines our process looking at the factors that are associated with variations in the Food Consumption Score (`fcs`) which is a numeric score with values ranging from 0 to 120. This score is calculated by International Food Policy Research Institute. BIHS dataset was filtered by specific regions in Bangladesh where World Renew ran their programs. 
+
+We used the variable `fcs` as our response variable because according to our client, this variable was the closest measure to the food security scores used as the response variable in the GAC Livelihoods regressions carried out by our client. To chose our predictors, we looked at the predictors deemed "statistically significant" after the hypothesis tests performed by our client, and tried to find similar predictors in the BIHS dataset. We determined that `house_owned` and all of the assets predictors would be good candidates. In addition to these variables, we decided to include demographic variables such as total number of household members and a couple biophysical predictors like percipitation (`bio_bio_12`) and temperature (`bio_bio_1`).
+
+
+
+## Exploratory plots
+
+Of the variables selected for our regression, we decided to plot those that were categorical using boxplots to see if there might be a relationship between the response variable `fcs` and these predictors. We also added jitter plots to get a better idea of the sample size. The resulting plots are shown below.
 
 ```{r}
 # whether they owned/rented a house
-gf_boxplot(data = bihs, fcs ~ house_owned)
+gf_boxplot(data = bihs, fcs ~ house_owned)%>%gf_jitter(alpha = 0.2)
 
 # tech assets
-gf_boxplot(data = bihs, fcs ~ asset_cartplough)
-gf_boxplot(data = bihs, fcs ~ asset_tractor)
-gf_boxplot(data = bihs, fcs ~ asset_motorbike)
-gf_boxplot(data = bihs, fcs ~ asset_telephone)
-gf_boxplot(data = bihs, fcs ~ asset_radio)
+gf_boxplot(data = bihs, fcs ~ asset_cartplough)%>%gf_jitter(alpha = 0.2)
+gf_boxplot(data = bihs, fcs ~ asset_tractor)%>%gf_jitter(alpha = 0.2)
+gf_boxplot(data = bihs, fcs ~ asset_motorbike)%>%gf_jitter(alpha = 0.2)
+gf_boxplot(data = bihs, fcs ~ asset_telephone)%>%gf_jitter(alpha = 0.2)
+gf_boxplot(data = bihs, fcs ~ asset_radio)%>%gf_jitter(alpha = 0.2)
 ```
 
-# Fitting the model
+From the boxplots above, there is a positive correltation between `fcs` and all our technological assets. In addition, for our `house_owned` variable, the plot shows higher `fcs` scores for those who own and/or rent their house. We also can see there are a lot of missing values in our dataset which is concerning. 
 
-We encountered some problems while trying to fit all of our variables into a single model. The model below is one that worked the best for now. It includes our variables of interest: `asset_cartplough` and `house_owned`.
+
+
+## Fitting the linear model
+
+We encountered problems when including most of the variables into a single model. The model below is the one that worked the best. It includes our two main variables of interest: `asset_cartplough` and `house_owned`.
 
 ```{r}
 asset_lm <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry +
@@ -114,7 +134,14 @@ asset_lm <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poult
 summary(asset_lm)
 ```
 
-# Checking for multicollinearity between predictors
+We can see that this model shows a low Adjusted R-squared value which is 0.2641. This implies that our model explains only 26 percent of the variation in the response. This is not surprising, however, as we are using a small numeber of predictors, and the BIHS survey contained more variables that were not used for the purpose of this analysis.
+
+
+
+## Checking for multicollinearity between predictors
+
+We wanted to check for multicollinearity between our predictors to eliminate the possibility of inflated variance  by getting rid of highly correlated predictors. 
+
 
 ```{r fig.height= 5, fig.width=7}
 # checking for collinearity in quantitative predictors
@@ -138,11 +165,13 @@ ggcorr(predictors)
 ```
 
 
+After checking for multicollinearity, we decided to eliminate `memb_total` and `bio_bio_1` which are shown to be highly correlated both in the reported GVIF scores (scores higher than 2 are highly correlated), and the correlation matrix plots. 
 
 
-# Removing predictors with high correlation
 
-Because we found correlations between some of the predictors, we decided to remove them and create a new model. The following model is the one we decided to use for this analysis.
+## Fitting a new model
+
+We decided to fit a new model without highly correlated predictors below. 
 
 ```{r}
 asset_lm_two <- lm(data = bihs_original, fcs ~ factor(survey_year) + asset_qty_poultry +
@@ -154,7 +183,10 @@ summary(asset_lm_two)
 vif(asset_lm_two)
 ```
 
-# Model assessment 
+
+We were able to reduce the correlation problem with this model, as the GVIF scores are lower. We will use this model for the rest of this analysis.
+
+## Model assessment 
 
 ```{r fig.height=3, fig.width= 7}
 # linearity and constant variance
@@ -174,30 +206,123 @@ gf_histogram(~res, data = bihs_original, bins = 15) # they look a bit right skew
 All the conditions for a linear regression seem to be met by our model, no major problems with linearity, constant variance, independence of residuals or normality of residuals can be seen.
 
 
-# Model selection
+## Model selection
 
 We are demonstrating which predictors are the best at explaining the response variable in two ways: by using the `dredge` method, and the `Anova` method. The results are shown below.
 
 ```{r}
-AIC_results <- dredge(asset_lm_two, rank = 'AIC')
-head(AIC_results, 7)
-
 BIC_results <- dredge(asset_lm_two, rank = 'BIC')
 head(BIC_results, 7)
 ```
 
-AIC reports that cartplough, cattle, telephone, precipitation and household total are important predictors of food consumption score.
+BIC reports that cattle, telephone and household total are important predictors of food consumption score.
 
-BIC reports that cattle, telephone and household total are important predictors of food consumption scores.
-
-It is imporant to note that the IC scores above are really close to each other, so we chose the models that had the least number of predictors to make a decision on which was the best model, but this is subjective.
+It is important to note that the IC scores above are really close to each other. We did not consider model averaging because we were more interested in looking at which predictors are better at explaining the variation in the response variable `fcs` rather than getting the most accurate estimate of `fcs`. We chose the model that has the fewest predictors in the BIC output as our best model.
 
 
-# Analysis of Variance
+## Analysis of Variance
 
 ```{r}
 Anova(asset_lm_two)
 ```
 
-ANOVA reports that cattle, household total, precipitation, cartplough, and telephone were significant at different significance levels which are outlined in the output above.
+ANOVA output above reports that cattle, household total, precipitation, cartplough, and telephone were significant at at least a 0.05 significance level.
 
+
+
+
+
+
+
+# Descriptive Statistics
+
+```{r, include = FALSE}
+## Data import
+bihs <- read_excel('../tidy_dataset/BIHS_household_2011_15.xlsx')
+write.csv(bihs, file = "bihs.csv")
+```
+
+## Livestock Assets
+
+```{r, include = FALSE}
+# data prep
+bihs <- bihs %>% mutate(livestock = ifelse(asset_qty_poultry + asset_qty_cattle + asset_qty_sheepgoat + asset_qty_otherlivestock > 0, 1, 0))
+```
+
+```{r}
+year_11 <- filter(bihs, survey_year == "2011")
+summary(year_11$livestock)%>%
+  pander::pander()
+
+year_15 <- filter(bihs, survey_year == "2015")
+summary(year_15$livestock)%>%
+  pander::pander()
+```
+
+## Technological Assets Summary
+
+```{r, include = FALSE}
+# data prep
+bihs <- bihs %>% mutate(motorbike = ifelse(asset_motorbike == "Yes", 1, 0),
+                        telephone = ifelse(asset_telephone == "Yes", 1, 0),
+                        television = ifelse(asset_television == "Yes", 1, 0),
+                        cartplough = ifelse(asset_cartplough == "Yes", 1, 0),
+                        radio = ifelse(asset_radio == "Yes", 1, 0),
+                        tractor = ifelse(asset_tractor == "Yes", 1, 0)
+                        )
+year_11 <- filter(bihs, survey_year == "2011")
+year_15 <- filter(bihs, survey_year == "2015")
+```
+
+### Motorbike
+
+```{r}
+summary(year_11$motorbike)%>%
+  pander::pander()
+summary(year_15$motorbike)%>%
+  pander::pander()
+```
+
+### Telephone
+```{r}
+summary(year_11$telephone)%>%
+  pander::pander()
+summary(year_15$telephone)%>%
+  pander::pander()
+```
+
+### Television
+```{r}
+summary(year_11$television)%>%
+  pander::pander()
+summary(year_15$television)%>%
+  pander::pander()
+```
+
+### Cartplough
+```{r}
+summary(year_11$cartplough)%>%
+  pander::pander()
+summary(year_15$cartplough)%>%
+  pander::pander()
+```
+
+### Radio
+```{r}
+summary(year_11$radio)%>%
+  pander::pander()
+summary(year_15$radio)%>%
+  pander::pander()
+```
+
+### Tractor
+```{r}
+summary(year_11$tractor)%>%
+  pander::pander()
+summary(year_15$tractor)%>%
+  pander::pander()
+```
+
+# Conclusion
+
+Our research question cannot be answered from our study of BIHS dataset above. Although both response variables in both datasets are similar measures of food security, we had so many missing predictors in BIHS dataset that were not present that were used in the regression for GAC Livelihoods survey. Due to this challenge, we do not think the Differnece-in-Difference analysis can be carried out. Therefore, we cannot conclude whether the GAC Livelihoods programs had a positive impact we can analyze using the BIHS dataset. 
